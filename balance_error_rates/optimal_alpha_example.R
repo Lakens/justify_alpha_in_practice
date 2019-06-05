@@ -2,8 +2,17 @@
 
 require("pwr")
 
-optab(n1=100, n2=100, d=0.5, T1T2cratio=1, HaHopratio=1, type = "two.sample",
+optab(n1=100, n2=100, d=0.5, T1T2cratio=4, HaHopratio=2, type = "two.sample",
       tails = "two.tailed")
+
+res <- optimal_alpha(power_function = "pwr.t.test(d=0.5, n=100, sig.level = x, type='two.sample', alternative='two.sided')$power", 
+                     error = "minimal", 
+                     prior_H1H0 = 2,
+                     costT1T2 = 4)
+
+res$alpha
+res$beta
+
 
 1-pwr.t.test(n = 5.5, d = 0.5, sig.level = 0.3228697, 
            type = "two.sample", alternative = "two.sided")$power
