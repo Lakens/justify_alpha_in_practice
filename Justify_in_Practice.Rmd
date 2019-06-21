@@ -11,12 +11,12 @@ affiliation:
   - id            : "1"
     institution   : "Eindhoven University of Technology, The Netherlands"
 author_note: |
-  All code used to create this manuscript is provided in an OSF repository at https://osf.io/xxxxx/.
+  All code used to create this manuscript is provided in an OSF repository at https://osf.io/h5e2q/.
 abstract: |
-  There are two reasons why the default use of an alpha level of 0.05 is sub-optimal. First, decisions based on data can typically be made more efficiently by choosing an alpha level that minimized the combined probability of Type 1 and Type 2 errors. Second, in study with very high statistical power *p*-values of for example 0.04 can actually be support for the null hypothesis instead of the alternative hypothesis (a fact known as Lindley's paradox). Because it is difficult to abandon a bad practice without providing an alternative, this manuscript explains two approaches to justifying your alpha. The first is based on the idea to either minimize or balance Type 1 and Type 2 error rates. The second approach lowers the alpha level as a function of the sample size. Software is provided to perform the required calculations. Both approaches have their limitations (e.g., the challenge of specifying relative costs and priors, or the slightly aribtrary nature of how the alpha level should decrease as the sample size increases) but they nevertheless provide a clear improvement over current ractices.   The use of alpha levels that have a better justification should improve statistical inferences and increase the efficiency of scientific research.
+  The default use of an alpha level of 0.05 is sub-optimal for two reasons. First, decisions based on data can be made more efficiently by choosing an alpha level that minimizes the combined Type 1 and Type 2 error rate. Second, in studies with very high statistical power *p*-values lower than the alpha level can actually be support for the null hypothesis, instead of for the alternative hypothesis. Because it is difficult to abandon a bad practice without providing an alternative, this manuscript explains two approaches that can be used to justify your alpha. The first approach is based on the idea to either minimize or balance Type 1 and Type 2 error rates. The second approach lowers the alpha level as a function of the sample size. Software is provided to perform the required calculations. Both approaches have their limitations (e.g., the challenge of specifying relative costs and priors, or the slightly arbitrary nature of how the alpha level should decrease as the sample size increases) but they nevertheless provide a clear improvement compared to current practices. The use of alpha levels that have a better justification should improve statistical inferences and increase the efficiency of scientific research.
   
 keywords          : "hypothesis testing, Type 1 error, Type 2 error, statistical power"
-wordcount         : XXXX words.
+wordcount         : 4890 words
 bibliography      : ["justify_alpha_in_practice.bib"]
 figsintext        : yes
 figurelist        : no
