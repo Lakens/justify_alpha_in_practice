@@ -67,21 +67,24 @@ information <- function(confirm, disconfirm, power, alpha, prior) #calcualte the
 
 idealalpha <- function(n, effsize, prior, test = "t-test", type = "two.sample", alternative = "two.sided", k = 4) #return the best alpha and power as well as the correct change in believe and plot change in believe as a function of alpha
 {
-alpha   <- seq(0,1,.00001) #supply a vector of alphas
-power  <- get_power(alpha, effsize, n, test = test, type = type, alternative = alternative, k = k) # calculate power
-confirm <- postconfirm(power, alpha, prior) #posterior after confirming
-disconf <- postdisconfirm(power, alpha, prior) #posterior after disconfirming
-info <- information(confirm, disconf, power, alpha, prior) #expected correct change in believe
-d <- as.data.frame(cbind(alpha,power,info)) 
-maxinf <- max(na.omit(info))
-d <- as.data.frame(subset(d, info == maxinf)) #return valus with highes correct change in believe
-plot(alpha,info, ylab = "Expected Correct Change in Belief", xlab = "Signifcance Level", type = "l", main = "Optimal Alpha", xlim = c(0,1), axes = F, ylim =c(0,round(maxinf + 0.005, digits = 2)))
-abline(v = 0.05, col = "red")
-abline(v = d$alpha, col = "blue")
-axis(side=2, at=c(seq(0,(maxinf+0.01),0.01)))
-axis(side=1, at=c(seq(0,1,0.05)))
-mtext(side =3, paste("Alpha = ", round(d$alpha, digits = 2), " Power = ", round(d$power, digits = 2), "Learning =", round(d$info*100, digits = 2), "%"))
-return(d)
+  alpha   <- seq(0,1,.00001) #supply a vector of alphas
+  power  <- get_power(alpha, effsize, n, test = test, type = type, alternative = alternative, k = k) # calculate power
+  confirm <- postconfirm(power, alpha, prior) #posterior after confirming
+  disconf <- postdisconfirm(power, alpha, prior) #posterior after disconfirming
+  info <- information(confirm, disconf, power, alpha, prior) #expected correct change in believe
+  d <- as.data.frame(cbind(alpha,power,info)) 
+  maxinf <- max(na.omit(info))
+  dmax <- as.data.frame(subset(d, info == maxinf)) #return valus with highes correct change in believe
+  d05 <- as.data.frame(subset(d, alpha == 0.05)) #compare to 5% alpha
+  plot(alpha,info, ylab = "Expected Correct Change in Belief", xlab = "Significance Level", type = "l", main = "Optimal Alpha", xlim = c(0,1), axes = F, ylim =c(0,round(maxinf + 0.005, digits = 2)))
+  abline(v = 0.05, col = "red")
+  abline(v = dmax$alpha, col = "blue")
+  axis(side=2, at=c(seq(0,(maxinf+0.01),0.01)))
+  axis(side=1, at=c(seq(0,1,0.05)))
+  mtext(side =3, paste("Alpha = ", round(dmax$alpha, digits = 2), " Power = ", round(dmax$power, digits = 2), "Learning =", round(dmax$info*100, digits = 2), "%"))
+  dmax <- cbind(dmax, d05$info)
+  colnames(dmax) <- c("alpha", "power", "Learning", "Learning05")
+  return(dmax)
 }
 
 #alphaConfirmation: Indicate your posterior probability after finding a positive result. 
