@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.4.15)  18 APR 2020 12:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.5.4)  17 FEB 2021 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -267,20 +267,6 @@ Package: ftnright 2014/10/28 v1.1f footnote layout package (FMi)
 \autwo@boxwidth=\skip64
 \autot@boxwidth=\skip65
 )
-(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
-s/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
-s/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks17
-\symAMSa=\mathgroup6
-\symAMSb=\mathgroup7
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath
 /amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
@@ -294,7 +280,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath
 /amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
+\@emptytoks=\toks17
 \ex@=\dimen166
 ))
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath
@@ -327,21 +313,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \dotsspace@=\muskip16
 \c@parentequation=\count194
 \dspbrk@lvl=\count195
-\tag@help=\toks19
+\tag@help=\toks18
 \row@=\count196
 \column@=\count197
 \maxfields@=\count198
-\andhelp@=\toks20
+\andhelp@=\toks19
 \eqnshift@=\dimen169
 \alignsep@=\dimen170
 \tagshift@=\dimen171
 \tagwidth@=\dimen172
 \totwidth@=\dimen173
 \lineht@=\dimen174
-\@envbody=\toks21
+\@envbody=\toks20
 \multlinegap=\skip67
 \multlinetaggap=\skip68
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
@@ -366,13 +352,26 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/in
 putenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks23
-\inpenc@posthook=\toks24
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
 )
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/te
 xtcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
+s/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
+s/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/upquote
 /upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
@@ -571,7 +570,7 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LT@rows=\count277
 \c@LT@tables=\count278
 \c@LT@chunks=\count279
-\LT@p@ftn=\toks25
+\LT@p@ftn=\toks24
 )
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphic
 s/lscape.sty
@@ -595,7 +594,7 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen181
 \ar@mcellbox=\box56
 \extrarowheight=\dimen182
-\NC@list=\toks26
+\NC@list=\toks25
 \extratabsurround=\skip76
 \backup@length=\skip77
 \ar@cellbox=\box57
@@ -606,7 +605,7 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \TX@target=\dimen186
 \TX@delta=\dimen187
 \TX@cols=\count281
-\TX@ftn=\toks27
+\TX@ftn=\toks26
 )
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threepa
 rttablex/threeparttablex.sty
@@ -652,7 +651,7 @@ Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
 \csq@qlevel=\count287
 \csq@maxlvl=\count288
 \csq@tshold=\count289
-\csq@ltx@everypar=\toks28
+\csq@ltx@everypar=\toks27
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquote
 s/csquotes.def
@@ -667,27 +666,23 @@ File: csquotes.cfg
 ))
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
 /babel.sty
-Package: babel 2020/03/22 3.42 The Babel package
-
-(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
-/switch.def
-File: switch.def 2020/03/22 3.42 Babel switching mechanism
-)
-(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
--english/english.ldf
-Language: english 2017/06/06 v3.3r English support from the babel system
+Package: babel 2020/04/28 3.43 The Babel package
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
 /babel.def
-File: babel.def 2020/03/22 3.42 Babel common definitions
+File: babel.def 2020/04/28 3.43 Babel common definitions
 \babel@savecnt=\count290
 \U@D=\dimen188
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
 /txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count291
 )
+\bbl@dirlevel=\count291
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
+-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: \l@british = using hyphenrules for english
 (babel)             (\language0) on input line 82.
 Package babel Info: \l@UKenglish = using hyphenrules for english
@@ -704,6 +699,22 @@ Package babel Info: \l@newzealand = using hyphenrules for english
 Language: english 2017/06/06 v3.3r English support from the babel system
 ))
 \cslhangindent=\skip80
+\csllabelwidth=\skip81
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/c
+alc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count292
+\calc@Bcount=\count293
+\calc@Adimen=\dimen189
+\calc@Bdimen=\dimen190
+\calc@Askip=\skip82
+\calc@Bskip=\skip83
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count294
+\calc@Cskip=\skip84
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -712,29 +723,29 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backe
 nd/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count292
+\l__kernel_color_stack_int=\count295
 \l__pdf_internal_box=\box58
 ) (./Justify_in_Practice.aux)
 \openout1 = `Justify_in_Practice.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 163.
+LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 163.
+LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 163.
+LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 163.
+LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 163.
+LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 163.
+LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 163.
+LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 163.
+LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 163.
+LaTeX Font Info:    ... okay on input line 163.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -773,17 +784,8 @@ LaTeX Font Info:    ... okay on input line 145.
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopd
 f-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grfext/
-grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexco
 nfig/epstopdf-sys.cfg
@@ -804,7 +806,7 @@ Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring OFF on input line 145.
+Package hyperref Info: Link coloring OFF on input line 163.
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperre
 f/nameref.sty
@@ -818,64 +820,64 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 tlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count293
+\c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 145.
-LaTeX Info: Redefining \pageref on input line 145.
-LaTeX Info: Redefining \nameref on input line 145.
+LaTeX Info: Redefining \ref on input line 163.
+LaTeX Info: Redefining \pageref on input line 163.
+LaTeX Info: Redefining \nameref on input line 163.
 (./Justify_in_Practice.out) (./Justify_in_Practice.out)
 \@outlinefile=\write3
 \openout3 = `Justify_in_Practice.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line
- 147.
+ 165.
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
 ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line
- 147.
+ 165.
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
 omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+pzccm on input line
- 147.
+ 165.
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
 omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+psycm on input line
- 147.
+ 165.
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
 omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-47.
+65.
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
 ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 165.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 165.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 147
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 165.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 165
 .
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
 s/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 147
+LaTeX Font Info:    Trying to load font information for U+msb on input line 165
 .
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
@@ -883,11 +885,11 @@ s/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 165.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 165.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 165.
 
 Underfull \vbox (badness 2443) has occurred while \output is active []
 
@@ -896,16 +898,18 @@ Underfull \vbox (badness 2443) has occurred while \output is active []
 
 
 ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 <Justify_in_Practice_files/figure-latex/p-plot-1.pdf, id=67, 650.43pt x 361.35p
 t>
 File: Justify_in_Practice_files/figure-latex/p-plot-1.pdf Graphic file (type pd
 f)
 <use Justify_in_Practice_files/figure-latex/p-plot-1.pdf>
 Package pdftex.def Info: Justify_in_Practice_files/figure-latex/p-plot-1.pdf  u
-sed on input line 176.
+sed on input line 194.
 (pdftex.def)             Requested size: 241.73712pt x 134.2984pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 183.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 199.
 [2]
 <Justify_in_Practice_files/figure-latex/weight-plot-1.pdf, id=79, 650.43pt x 36
 1.35pt>
@@ -913,7 +917,7 @@ File: Justify_in_Practice_files/figure-latex/weight-plot-1.pdf Graphic file (ty
 pe pdf)
 <use Justify_in_Practice_files/figure-latex/weight-plot-1.pdf>
 Package pdftex.def Info: Justify_in_Practice_files/figure-latex/weight-plot-1.p
-df  used on input line 193.
+df  used on input line 211.
 (pdftex.def)             Requested size: 241.73712pt x 134.2984pt.
 [3 <./Justify_in_Practice_files/figure-latex/p-plot-1.pdf>]
 <Justify_in_Practice_files/figure-latex/cost-plot-1.pdf, id=95, 650.43pt x 361.
@@ -922,70 +926,65 @@ File: Justify_in_Practice_files/figure-latex/cost-plot-1.pdf Graphic file (type
  pdf)
 <use Justify_in_Practice_files/figure-latex/cost-plot-1.pdf>
 Package pdftex.def Info: Justify_in_Practice_files/figure-latex/cost-plot-1.pdf
-  used on input line 210.
+  used on input line 228.
 (pdftex.def)             Requested size: 241.73712pt x 134.2984pt.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-17.
+35.
 
 (c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
 ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [4 <./Justify_in_Practice_files/figure-latex/weight-plot-1.pdf> <./Justify_in
-_Practice_files/figure-latex/cost-plot-1.pdf>]
-<Justify_in_Practice_files/figure-latex/idealalpha1-1.pdf, id=122, 650.43pt x 3
+_Practice_files/figure-latex/cost-plot-1.pdf>] [5]
+<Justify_in_Practice_files/figure-latex/idealalpha1-1.pdf, id=135, 650.43pt x 3
 61.35pt>
 File: Justify_in_Practice_files/figure-latex/idealalpha1-1.pdf Graphic file (ty
 pe pdf)
 <use Justify_in_Practice_files/figure-latex/idealalpha1-1.pdf>
 Package pdftex.def Info: Justify_in_Practice_files/figure-latex/idealalpha1-1.p
-df  used on input line 265.
+df  used on input line 283.
 (pdftex.def)             Requested size: 241.73712pt x 134.2984pt.
-[5]
 <Justify_in_Practice_files/figure-latex/idealalpha2-1.pdf, id=137, 650.43pt x 3
 61.35pt>
 File: Justify_in_Practice_files/figure-latex/idealalpha2-1.pdf Graphic file (ty
 pe pdf)
 <use Justify_in_Practice_files/figure-latex/idealalpha2-1.pdf>
 Package pdftex.def Info: Justify_in_Practice_files/figure-latex/idealalpha2-1.p
-df  used on input line 273.
+df  used on input line 291.
 (pdftex.def)             Requested size: 241.73712pt x 134.2984pt.
 [6 <./Justify_in_Practice_files/figure-latex/idealalpha1-1.pdf> <./Justify_in_P
 ractice_files/figure-latex/idealalpha2-1.pdf>] [7] [8] [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 446.
-[10
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 446.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
+[10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
 (./Justify_in_Practice.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 446.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 446.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
 Package rerunfilecheck Info: File `Justify_in_Practice.out' has not changed.
 (rerunfilecheck)             Checksum: 932D400AC7A84A9FE79E980F76CCEAFD;3148.
  ) 
 Here is how much of TeX's memory you used:
- 14253 strings out of 482530
- 215133 string characters out of 5948315
- 486957 words of memory out of 5000000
- 29516 multiletter control sequences out of 15000+600000
- 591348 words of font info for 119 fonts, out of 8000000 for 9000
+ 14393 strings out of 482605
+ 216803 string characters out of 5949435
+ 488652 words of memory out of 5000000
+ 29588 multiletter control sequences out of 15000+600000
+ 590793 words of font info for 117 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,9n,46p,3390b,418s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,9n,46p,3390b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips
 /base/8r.enc}<c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/font
-s/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/Maximilian Maier/AppData/Roamin
-g/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/Maximi
-lian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb><c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb><c:/Users/Maximilian Maier/AppData/Roaming/Tin
-yTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/Maximilian Maier/AppD
-ata/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/Maxim
-ilian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
-><c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/
-times/utmri8a.pfb>
-Output written on Justify_in_Practice.pdf (10 pages, 727395 bytes).
+s/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/Maximilian Maier/AppData/Roamin
+g/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/Maximil
+ian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/typ
+e1/urw/symbol/usyr.pfb><c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf
+-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/Maximilian Maier/AppData/Roami
+ng/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/Maximilian Mai
+er/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Justify_in_Practice.pdf (10 pages, 720441 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
- 259 compressed objects within 3 object streams
- 83 named destinations out of 1000 (max. 500000)
+ 288 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 84 named destinations out of 1000 (max. 500000)
  130 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,13 +2,18 @@
 title             : "Justify Your Alpha: A Practical Guide"
 shorttitle        : "Justify in Practice"
 author: 
-  - name          : "Daniel Lakens"
+  - name          : "Maximilian Maier"
     affiliation   : "1"
+    corresponding : no
+  - name          : "Daniel Lakens"
+    affiliation   : "2"
     corresponding : yes
     address       : "ATLAS 9.402, 5600 MB, Eindhoven, The Netherlands"
     email         : "D.Lakens@tue.nl"
 affiliation:
   - id            : "1"
+    institution   : "University of Amsterdam, The Netherlands"
+  - id            : "2"
     institution   : "Eindhoven University of Technology, The Netherlands"
 author_note: |
   All code used to create this manuscript is provided in an OSF repository at https://osf.io/h5e2q/.
@@ -42,7 +47,7 @@ library(papaja)
 
 Researchers often rely on data to decide how to act. In a Neyman-Pearson approach to hypothesis testing [@neyman_problem_1933] studies are designed such that erroneous decisions that determine how we act are controlled in the long run at some desired maximum level. If resources were infinite we could collect so much data that the chance of making a wrong decision is incredibly small. But resources are often limited, which means that researchers need to decide how to choose the rate at which they are willing to make errors. After data is collected researchers can incorrectly act as if there is an effect when there is no true effect (a Type 1 error) or incorrectly act as if there is no effect when there is a true effect (a Type 2 error). For any fixed sample size and true effect size a reduction in the Type 1 error rate will increase the Type 2 error rate and vice versa. 
 
-The question how error rates should be set in any study requires careful consideration of the relative costs of a Type 1 error or a Type 2 error. Regrettably researchers rarely provide such a justification, and predominantly use a Type 1 error rate of 5%. One reason researchers rely on norms instead of rationally chosen error rates is the absence of explanations how to justify a different alpha level than the normative use of 0.05. This article explains why error rates need to be justified, and provides three practical guidelines that can be used to justify the alpha level by (1) balacing or minizing error rates, (2) optimizing informational value or aiming for specific posterior probabilities, or (3) lowering the alpha level as a function of the sample size. 
+The question how error rates should be set in any study requires careful consideration of the relative costs of a Type 1 error or a Type 2 error. Regrettably researchers rarely provide such a justification, and predominantly use a Type 1 error rate of 5%. One reason researchers rely on norms instead of rationally chosen error rates is the absence of explanations how to justify a different alpha level than the normative use of 0.05. This article explains why error rates need to be justified, and provides three practical guidelines that can be used to justify the alpha level by (1) balancing or minimizing error rates, (2) optimizing informational value or aiming for specific posterior probabilities, or (3) lowering the alpha level as a function of the sample size. 
 
 # Why do we use a 5% alpha level and 80% power?
 
@@ -226,14 +231,14 @@ w <- (costT1T2 * res6$alpha + priorH1H0 * (res6$beta)) / (priorH1H0 + costT1T2)
 
 If you want to balance or minimize error rates in the long run, you should lower the alpha level as the prior probability of a null effect increases, or increase the alpha level as the prior probability of a true effect increases. Because the base rate of true hypotheses is unknown, this step requires subjective judgment. This can not be avoided, because one always makes assumptions about base rates, even if the assumption is that a hypothesis is equally likely to be true as false (with both H1 and H0 having a 50% probability). Assuming equal prior probabilities for H1 and H0, we saw above that balanced error rates assuming d = 0.5 and collection n = 50 per condition in a *t*-test would imply $\alpha$ = `r format(res2$alpha, digits = 3, nsmall = 2)` and $\beta$ = `r format(res2$beta, digits = 3, nsmall = 2)`. If you assume the null hypothesis is 10 times more likely than the alternative hypothesis (or the alternative hypothesis is 0.1 times as likely as the null hypothesis) then balanced error rates would require setting $\alpha$ to `r format(res5$alpha, digits = 3, nsmall = 2)` and $\beta$ to `r format(res5$beta, digits = 3, nsmall = 2)`. If you believe the alternative hypothesis is twice as likely to be true as the null hypothesis, balancing error rates in the long run would mean increasing the alpha level and increasing the power by choosing $\alpha$ = `r format(res6$alpha, digits = 3, nsmall = 2)` and $\beta$ = `r format(res6$beta, digits = 3, nsmall = 2)`.
 
-The two approaches (balancing error rates or minimizing error rates) typically yield quite similar resuls. Where minimizing error rates might be slightly more efficient, balancing error rates might be slightly more intuitive (especially when the prior probability of H0 and H1 are equal). Note that although there is always an optimal choice of the alpha level, there is always a range of values that yield quite similar weighted error rates. It is useful to plot weighted error rates as in Figure \ref{fig:cost-plot}. To balance or minimize error rates, researchers need to carefully consider the relative cost of Type 1 and Type 2 errors, the prior probability the null hypothesis is true, and the effect size they want to detect [@mudge_setting_2012], because these factors are used to calculate the weighted combined error rates *w*: 
+The two approaches (balancing error rates or minimizing error rates) typically yield quite similar results. Where minimizing error rates might be slightly more efficient, balancing error rates might be slightly more intuitive (especially when the prior probability of H0 and H1 are equal). Note that although there is always an optimal choice of the alpha level, there is always a range of values that yield quite similar weighted error rates. It is useful to plot weighted error rates as in Figure \ref{fig:cost-plot}. To balance or minimize error rates, researchers need to carefully consider the relative cost of Type 1 and Type 2 errors, the prior probability the null hypothesis is true, and the effect size they want to detect [@mudge_setting_2012], because these factors are used to calculate the weighted combined error rates *w*: 
 
 \begin{equation}
 \frac{(cost_{T1T2} \times \alpha + prior_{H1H0} \times \beta)}{prior_{H1H0}+cost_{T1T2}}
 \label{eq:minimize}
 \end{equation}
 
-For example, imagine Type 1 errors are weighted 4 times as much as Type 2 errors ($cost_{T1T2}$ = 4) and the alternative hypothesis is believed to be 2 times as likely as the null hypothesis ($prior_{H1H0}$ = 10). With $\alpha$ = `r format(res6$alpha, digits = 3, nsmall = 2)` and $\beta$ = `r format(res6$beta, digits = 3, nsmall = 2)` the weigthed combined error rate is `r format(w, digits = 3, nsmall = 2)`.
+For example, imagine Type 1 errors are weighted 4 times as much as Type 2 errors ($cost_{T1T2}$ = 4) and the alternative hypothesis is believed to be 2 times as likely as the null hypothesis ($prior_{H1H0}$ = 10). With $\alpha$ = `r format(res6$alpha, digits = 3, nsmall = 2)` and $\beta$ = `r format(res6$beta, digits = 3, nsmall = 2)` the weighted combined error rate is `r format(w, digits = 3, nsmall = 2)`.
 
 ## Probability-Based Alpha Level Justifications
 
@@ -288,7 +293,7 @@ To corroborate the finding more strongly, the researchers decide to conduct a re
 idealalpha(200, 0.2,  0.830718, test = "t-test", type = "one.sample")
 ```
 
-The example shows, how optimizing informational value can be the method of choice, especially in basic research where the costs of different errors are often difficult to asses. In addition, when the prior probability of a hypothesis is high, it is often beneficial to increase the signficance level. By increasing the significance level the researchers can expect to learn  `r stroop2$Learning/stroop2$Learning05` as much by conducting the replication compared to the conventional significance level. Note the similarity to minimizing error rates, where a higher prior probability also justifies using a higher alpha level. 
+The example shows, how optimizing informational value can be the method of choice, especially in basic research where the costs of different errors are often difficult to asses. In addition, when the prior probability of a hypothesis is high, it is often beneficial to increase the significance level. By increasing the significance level the researchers can expect to learn  `r stroop2$Learning/stroop2$Learning05` as much by conducting the replication compared to the conventional significance level. Note the similarity to minimizing error rates, where a higher prior probability also justifies using a higher alpha level. 
 
 ### Aiming for Posterior Probabilities. 
 
@@ -327,7 +332,7 @@ The example shows that when we want to be reasonably certain that the null hypot
 
 ### Probability-Based Power Analysis
 
-However, usually researchers want to control the probability of both type one and type two errors. In this context, they can specify the prior, the intended posterior probability after a significant result, and the intended probability after a non-significant result. We developed a probability-based power analysis (PAPA) that then estimates the minum required sample size as well as the needed significance threshold to achive the desired posterior probabilities. 
+However, usually researchers want to control the probability of both type one and type two errors. In this context, they can specify the prior, the intended posterior probability after a significant result, and the intended probability after a non-significant result. We developed a probability-based power analysis (PAPA) that then estimates the minimum required sample size as well as the needed significance threshold to achieve the desired posterior probabilities. 
 ```{r,echo = FALSE, message = FALSE, warning = FALSE, include = FALSE }
 powerCovid <- probpower(0.15, 0.5, 0.2, 0.95)
 ```
@@ -337,32 +342,65 @@ The example shows that for researchers that want to control both errors and have
 
 ### Discussion Probability-Based Approaches 
 
-We have now presented three ways to justify alpha levels based on the posterior probability or the change in probability. The first method, optimizing the informational value of a study, is especially useful in theoretical research, when the researcher has no strong opinion regarding which type of error is more costly. If the researcher wants to specifically avoid false positives or false negatives the approach of aiming for specific posterior probabilites is the most suitable. However, usually researchers care about both, false positives and false negatives, here a probability-based power analysis will help to justify the sample size and $\alpha$ level needed to control both types of errors. PAPA is based on calculating the alpha level needed to achieve sufficient posterior probability after a significant result and then repeating this process over different sample sizes until the probability after a significant and a non-significant result are in line with the specifications of the researcher. 
+We have now presented three ways to justify alpha levels based on the posterior probability or the change in probability. The first method, optimizing the informational value of a study, is especially useful in theoretical research, when the researcher has no strong opinion regarding which type of error is more costly. If the researcher wants to specifically avoid false positives or false negatives the approach of aiming for specific posterior probabilities is the most suitable. However, usually researchers care about both, false positives and false negatives, here a probability-based power analysis will help to justify the sample size and $\alpha$ level needed to control both types of errors. PAPA is based on calculating the alpha level needed to achieve sufficient posterior probability after a significant result and then repeating this process over different sample sizes until the probability after a significant and a non-significant result are in line with the specifications of the researcher. 
 
-An interesting question is also, how this approach relates to Bayesian statistical inference. While equation \ref{eq:confirmation} and \ref{eq:disconfirmation} are based on Bayes theorem, our appraoch is still a form of significance testing. There are certain advantages to Bayesian procedures such as the ability to stop conditional on the evidence and to quantify evidence for the null hypothesis and the alternative continously [@wagenmakers2016bayesian]. However, our approach might be more easy to learn for researchers already familiar with classical statistics and does not require to specify a parameter prior distribution under the alternative hypothesis. In practice researchers might want to report 'a B for every *p*', or a Bayes factor for every *p*-value [@dienes_four_2017], and take any disagreement between these two approaches (which should be quite rare in practice according to Jeffreys, 1939) as a reason to be cautious when drawing conclusions from the data. 
+An interesting question is also, how this approach relates to Bayesian statistical inference. While equation \ref{eq:confirmation} and \ref{eq:disconfirmation} are based on Bayes theorem, our approach is still a form of significance testing. There are certain advantages to Bayesian procedures such as the ability to stop conditional on the evidence and to quantify evidence for the null hypothesis and the alternative continuously [@wagenmakers2016bayesian]. However, our approach might be more easy to learn for researchers already familiar with classical statistics and does not require to specify a parameter prior distribution under the alternative hypothesis. In practice researchers might want to report 'a B for every *p*', or a Bayes factor for every *p*-value [@dienes_four_2017], and take any disagreement between these two approaches (which should be quite rare in practice according to Jeffreys, 1939) as a reason to be cautious when drawing conclusions from the data. 
 
 
 ## Lowering the Alpha Level as a Function of the Sample Size
 
-Sometimes a researcher might feel it is too challenging to specify relative costs, prior probabilities, and the effect size of interest, and be tempted to fall back to the use of an alpha level of 0.05. For such cases a less philosophically coherent approach exists where the alpha level is lowered as a function off the sample size. Although still built on some simple conventions, it is offered here as an alternative approach to justify the alpha level that, although not perfect, is still an improvement over current practices.
+Sometimes a researcher might feel it is too challenging to specify relative costs, prior probabilities, and the effect size of interest, and be tempted to fall back to the use of an alpha level of 0.05. For such cases an approach exists where the alpha level is lowered as a function off the sample size. The need to do so is discussed extensively by @leamer_specification_1978. He writes "The rule of thumb quite popular now, that is, setting the significance level arbitrarily to .05, is shown to be deficient in the sense that from every reasonable viewpoint the significance level should be a decreasing function of sample size." This was already recognized by @jeffreys_theory_1939, who discusses ways to set the alpha level in the Neyman-Pearson approach to statistics: "We should therefore get the best result, with any distribution of alpha, by some form that makes the ratio of the critical value to the standard error increase with n. It appears then that whatever the distribution may be, the use of a fixed *P* limit cannot be the one that will make the smallest number of mistakes." @good_bayes/non-bayes_1992 notes: "we have empirical evidence that sensible *P* values are related to weights of evidence and, therefore, that *P* values are not entirely without merit. The real objection to *P* values is not that they usually are utter nonsense, but rather that they can be highly misleading, especially if the value of N is not also taken into account and is large."
 
-This approach is discussed most extensively by @leamer_specification_1978. He writes "The rule of thumb quite popular now, that is, setting the significance level arbitrarily to .05, is shown to be deficient in the sense that from every reasonable viewpoint the significance level should be a decreasing function of sample size." This was already recognized by @jeffreys_theory_1939, who discusses ways to set the alpha level in the Neyman-Pearson approach to statistics: "We should therefore get the best result, with any distribution of alpha, by some form that makes the ratio of the critical value to the standard error increase with n. It appears then that whatever the distribution may be, the use of a fixed *P* limit cannot be the one that will make the smallest number of mistakes." 
+To understand these recommendations it is important to distinguish between statistical inferences based on error control and inferences based on likelihoods. An alpha level of 5% will limit incorrect decisions to a desired maximum (in the long run, and when all test assumptions are met). However, from a likelihood perspective it is possible that the observed data is much more likely when the null hypothesis is true, than when the alternative hypothesis is true, even when the observed *p*-value is smaller than 0.05. This situation, known as Lindley's paradox, is visualized in Figure \ref{fig:p-plot}. It emerges because the critical value of a frequentist test approaches a limit as the sample size increases (e.g., *t* = 1.96 for a two-sided *t*-test). In Bayesian statistics the same Bayes factor requires a larger test statistic when the sample size is larger (see @rouder_bayesian_2009 and @zellner_introduction_1971). 
 
-To understand this recommendation it is important to distinguish between statistical inferences based on error control and inferences based on likelihoods. An alpha level of 5% will limit incorrect decisions to a desired maximum (in the long run, and when all test assumptions are met). However, from a likelihood perspective it is possible that the observed data is much more likely when the null hypothesis is true, than when the alternative hypothesis is true, even when the observed *p*-value is smaller than 0.05. This situation, known as Lindley's paradox, is visualized in Figure \ref{fig:p-plot}. It emerges because the critical value of a frequentist test approaches a limit as the sample size increases (e.g., *t* = 1.96 for a two-sided *t*-test). In Bayesian statistics the same Bayes factor requires a larger test statistic when the sample size is larger (see @rouder_bayesian_2009 and @zellner_introduction_1971). 
+To prevent Lindley's paradox when using frequentist statistics one would need to adjust the alpha level in a way that the likelihood ratio (also called the Bayes factor) at the critical test statistic is always one. With such an alpha level, a significant *p*-value will always be as least as likely if the alternative is true than if the null is true, successfully avoiding the Lindley paradox. @faulkenberry2019estimating and @rouder2009bayesian developed Bayes factors for *t*-tests and ANOVAs which can calculate the Bayes factor from the test statistic and degrees of freedom.
+Based on these papers we developed a shiny app (link) to reduce the alpha level proportional to the sample size and avoid the Lindley paradox. However, one might ask, whether there is not still a paradox if we reject the null hypothesis even so the evidence for the alternative from a Bayesian point of view is only weak as the case with a likelihood ratio of one. To reliably avoid false positives one would need a tool in which a significant *p*-value corresponds to moderate or strong evidence from a likelihoodist or Bayesian perspective. As a rule of thumb, if the data is 3 to 10 times more likely under the alternative than under the null this is considered moderate evidence, and data more than 10 times more likely under the alternative is considered strong evidence [@Jeffreys1939, Appendix 1; @LeeWagenmakersBayesBook, p. 105]. Therefore, we extended the shiny app to also allow researchers to adjust the alpha level in a way that a significant *p*-value will always provide moderate or strong evidence against the null hypothesis.  
 
-To prevent Lindley's paradox when using frequentist statistics one would need to lower the alpha level as a function of the statistical power. @good_bayes/non-bayes_1992 notes: 'we have empirical evidence that sensible *P* values are related to weights of evidence and, therefore, that *P* values are not entirely without merit. The real objection to *P* values is not that they usually are utter nonsense, but rather that they can be highly misleading, especially if the value of N is not also taken into account and is large.' Based on the observation by Jeffrey’s (1939) that, under specific circumstances, the Bayes factor against the null hypothesis is approximately inversely proportional to ($\sqrt{N}$), @good_c140._1982 suggests a standardized *p*-value to bring *p*-values in closer relationship with weights of evidence:
-\begin{equation}
-p_{stan} = p\sqrt{\frac{N}{100}} 
-\label{eq:pstan}
-\end{equation}
-where *p* is the observed *p*-value and *N* is the total sample size. This formula standardizes the *p*-value to the evidence against the null hypothesis that would be observed if $p_{stan}$ was the tail area probability observed in a sample of 100 participants. It is perhaps easier to think about a standardized alpha level:
-\begin{equation}
-\alpha_{stan} = \frac{\alpha}{\sqrt{\frac{N}{100}}} \label{eq:astan}
-\end{equation}
+Our calculations are based on a unit information prior. This prior is relatively wide which sometimes results in overstated evidence for H0. However, while it is usually wise to use more informed priors [e.g., @mcelreath2020statistical], we believe that to avoid the Lindley paradox a wide prior is the more conservative choice. In other words, it will prevent overstating the evidence for H1 and consequently be more likely to use an alpha level that is too low, rather than an alpha level that is too high. In addition, in contrast to previous approaches that aimed to calculate a Bayes factor for every *p*-value [e.g., @colquhoun2019false; @colquhoun2017reproducibility] our application does not require researchers to specify the effect size under the alternative. Although the unit information prior is still an expectation for H1, not needing to specify the prior directly will likely increase the adoption among empirical researchers who sometimes find it difficult to specify a smallest effect size of interest or an expected effect size. 
 
-With 100 participants $\alpha$ and $\alpha_{stan}$ are the same, but as the sample size increases beyond 100 observations the alpha level decreases. A higher critical test-statistic needs to be observed to still consider a finding 'statistically significant' as the sample size increases, which prevents Lindley's paradox. For example, when researchers would otherwise by default have used $\alpha$ = 0.05, they lower their alpha level for a sample size of 500 to an $\alpha_{stan}$ of `r format(alpha_standardized(0.05, 500, standardize_N = 100), digits = 2)`, and use this alpha level to test against when the 500 observations are collected. Although in principle the function to calculate the standardized *p*-value can also be used when sample sizes are *smaller* than 100, which would return a standardized alpha level *larger* than 0.05, this is not the intended use. 
+Let us illustrate this using the example of @van2015gender which compare the success of grant applications in female and male applicants (n = 2823). For example, their results indicate that women where less likely to be prioritized in preselection interviews than men, F(1, 2388) = 7.94, *p* = 0.0049.\footnote{in the original paper the authors report an incorrectly calculated *p*-value of 0.01} However, given the high sample size it seems desirable to reduce the alpha level considerably based on the reasoning above. 
 
-As mentioned by @rouder_bayesian_2009: "NP testing can be made consistent by allowing Type I error rates to decrease toward zero as the sample size increases. How this rate should decrease with sample size, however, is neither obvious nor stipulated by the statistical theory underlying NP testing." Indeed, whereas lowering the alpha level as the sample size increases is a valid approach from a likelihood perspective, the specific way to do this as proposed by @good_c140._1982 is itself largely based on the heuristic that starting to lower the alpha level when the number of total observations increases above 100 is largely arbitrary. There is no special reason to standardize the *p*value or alpha level to 100 observations, or for that matter to choose a 5% alpha level as a starting point. The reason to nevertheless recommend this approach to justify alpha levels is that it is straightforward to implement and quite likely to succesfully prevent Lindley's paradox for most studies in psychology. At the same time, in future research statisticians could develop more principled approaches to lowering the alpha level as a function of the sample size.
+```{r,echo = FALSE, message = FALSE, warning = FALSE, include = FALSE }
+bf_bic <- function(F, df1, df2, repeated=FALSE, report.as="BF10") {
+  if (repeated==FALSE) {
+    N = df1+df2+1
+  } 
+  else {
+    N = df1+df2
+  }
+  
+  bf = sqrt(N^df1*(1+F*df1/df2)^(-1*N))
+  
+  if (report.as=="BF01"){
+    return(c(B01=bf))
+  }
+  else {
+    return(c(B10=1/bf))
+  }
+}
+
+alpha_f.test_solve <- function(x, df1, df2, evidence, paired){
+  (evidence - bf_bic(x, df1, df2, paired))^2
+}
+
+f.testAlpha <- function(evidence, df1, df2, paired = FALSE){
+  
+  crit_f <- optim(2, alpha_f.test_solve, lower = 0, upper = Inf, method = "L-BFGS-B",
+                  df1 = df1, df2 = df2, evidence = evidence, paired = paired)$par
+  alpha <- (1 - pf(crit_f, df1, df2))
+  
+  return(alpha)
+}
+
+lindley  <- f.testAlpha(1,  1, 2388)
+moderate <- f.testAlpha(3,  1, 2388)
+strong   <- f.testAlpha(10, 1, 2388)
+
+```
+
+Indeed, to avoid Lindley's paradox, the researchers need to use an alpha level of `r printnum(lindley, digits = 4)`. In other words, the observed *p*-value provides only very weak evidence for the alternative. However, it seems desirable to require at least moderate evidence for the alternative before claiming a discovery. To achieve this the researchers would need to use a alpha level of `r printnum(moderate, digits = 4)`. To provide strong evidence given a significant *p*-value, they would need an even lower alpha level of `r printnum(strong, digits = 4)`. We can see from this example, that *p* = 0.05 is too low of an evidential standard under large sample sizes.
+
+Although in principle for small sample sizes the function could return an alpha level *larger* than 0.05, this is not the intended use. The reason for this is that we do not aim to replace the frequentist error rates with likelihood ratios but merely to reliably identify the cases where both approaches to statistical inference come to the same conclusions.
 
 # Discussion
 
