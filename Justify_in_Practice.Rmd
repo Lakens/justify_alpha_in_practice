@@ -18,18 +18,19 @@ affiliation:
 author_note: |
   All code used to create this manuscript is provided in an OSF repository at https://osf.io/h5e2q/.
 abstract: |
-  The default use of an alpha level of 0.05 is sub-optimal for several reasons. Decisions based on data can be made more efficiently by choosing an alpha level that minimizes the combined Type 1 and Type 2 error rate or that optimizes the informational value of a study. In addition, in studies with very high statistical power *p*-values lower than the alpha level can actually be support for the null hypothesis, instead of for the alternative hypothesis. Because it is difficult to abandon a bad practice without providing an alternative, this manuscript explains three approaches that can be used to justify your alpha. The first approach is based on the idea to either minimize or balance Type 1 and Type 2 error rates. The second approach is based on optimizing the informational value of studies or aiming for high posterior probability of hypotheses after conducting a statistical test. The third approach lowers the alpha level as a function of the sample size. Software is provided to perform the required calculations. All approaches have their limitations (e.g., the challenge of specifying relative costs and priors, or the slightly arbitrary nature of how the alpha level should decrease as the sample size increases) but they nevertheless provide a clear improvement compared to current practices. The use of alpha levels that have a better justification should improve statistical inferences and increase the efficiency of scientific research.
+ The default use of an alpha level of 0.05 is sub-optimal for two reasons. First, decisions based on data can be made more efficiently by choosing an alpha level that minimizes the combined Type 1 and Type 2 error rate. Second, in studies with very high statistical power *p*-values lower than the alpha level can actually be support for the null hypothesis, instead of for the alternative hypothesis. Because it is difficult to abandon a bad practice without providing an alternative, this manuscript explains two approaches that can be used to justify your alpha. The first approach is based on the idea to either minimize or balance Type 1 and Type 2 error rates. The second approach lowers the alpha level as a function of the sample size. Software is provided to perform the required calculations. Both approaches have their limitations (e.g., the challenge of specifying relative costs and priors, or the slightly arbitrary nature of how the alpha level should decrease as the sample size increases) but they nevertheless provide a clear improvement compared to current practices. The use of alpha levels that have a better justification should improve statistical inferences and increase the efficiency of scientific research.
   
 keywords          : "hypothesis testing, Type 1 error, Type 2 error, statistical power"
 wordcount         : 4890 words
 bibliography      : ["justify_alpha_in_practice.bib"]
 figsintext        : yes
+linenumbers       : no
 figurelist        : no
 tablelist         : no
 footnotelist      : no
 lineno            : no
 mask              : no
-class     : "jou"
+class     : "man"
 output            : papaja::apa6_pdf
 latex_engine: xelatex
 
@@ -42,12 +43,11 @@ library(justifieR)
 library(ggplot2)
 library(pwr)
 library(papaja)
-
 ```
 
 Researchers often rely on data to decide how to act. In a Neyman-Pearson approach to hypothesis testing [@neyman_problem_1933] studies are designed such that erroneous decisions that determine how we act are controlled in the long run at some desired maximum level. If resources were infinite we could collect so much data that the chance of making a wrong decision is incredibly small. But resources are often limited, which means that researchers need to decide how to choose the rate at which they are willing to make errors. After data is collected researchers can incorrectly act as if there is an effect when there is no true effect (a Type 1 error) or incorrectly act as if there is no effect when there is a true effect (a Type 2 error). For any fixed sample size and true effect size a reduction in the Type 1 error rate will increase the Type 2 error rate and vice versa. 
 
-The question how error rates should be set in any study requires careful consideration of the relative costs of a Type 1 error or a Type 2 error. Regrettably researchers rarely provide such a justification, and predominantly use a Type 1 error rate of 5%. One reason researchers rely on norms instead of rationally chosen error rates is the absence of explanations how to justify a different alpha level than the normative use of 0.05. This article explains why error rates need to be justified, and provides three practical guidelines that can be used to justify the alpha level by (1) balancing or minimizing error rates, (2) optimizing informational value or aiming for specific posterior probabilities, or (3) lowering the alpha level as a function of the sample size. 
+The question how error rates should be set in any study requires careful consideration of the relative costs of a Type 1 error or a Type 2 error. Regrettably researchers rarely provide such a justification, and predominantly use a Type 1 error rate of 5%. One reason researchers rely on norms instead of rationally chosen error rates is the absence of explanations how to justify a different alpha level than the normative use of 0.05. This article explains why error rates need to be justified, and provides two practical guidelines that can be used to justify the alpha level by balancing or minimizing error rates, or justify the alpha level by lowering it as a function of the sample size. 
 
 # Why do we use a 5% alpha level and 80% power?
 
@@ -55,7 +55,7 @@ As a young scholar we might naively assume that when all researchers do somethin
 
 Even though in theory alpha levels should be justified, in practice researchers tend to imitate others. Fisher writes in 1926: "Personally, the writer prefers to set a low standard of significance at the 5 per cent point, and ignore entirely all results which fail to reach this level". This sentence is preceded by the statement "If one in twenty does not seem high enough odds, we may, if we prefer it, draw the line at one in fifty (the 2 percent point), or one in a hundred (the 1 percent point)." Indeed, in his examples Fisher often uses an alpha of 0.01. Nevertheless, researchers seem to have copied the value Fisher preferred, instead of his more important take-home message that the significance level should be set by the experimenter. The default use of an alpha level of 0.05 seems to originate from the early work of Gosset on the *t*-distribution [@cowles_origins_1982], who believed that a difference of two standard deviations (a z-score of 2) was sufficiently rare.
 
-The default use of 80% power (or a 20% Type 2, or beta (b) error) is similarly based on personal preferences by @cohen_statistical_1988, who writes: "It is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used. This means that $\beta$ is set at .20. This arbitrary but reasonable value is offered for several reasons (Cohen, 1965, pp. 98-99). The chief among them takes into consideration the implicit convention for $\alpha$ of .05. The $\beta$ of .20 is chosen with the idea that the general relative seriousness of these two kinds of errors is of the order of .20/.05, i.e., that Type I errors are of the order of four times as serious as Type II errors. This .80 desired power convention is offered with the hope that it will be ignored whenever an investigator can find a basis in his substantive concerns in his specific research investigation to choose a value ad hoc."
+The default use of 80% power (or a 20% Type 2, or beta (b) error) is similarly based on personal preferences by @cohen_statistical_1988, who writes: "It is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used. This means that beta is set at .20. This arbitrary but reasonable value is offered for several reasons (Cohen, 1965, pp. 98-99). The chief among them takes into consideration the implicit convention for alpha of .05. The beta of .20 is chosen with the idea that the general relative seriousness of these two kinds of errors is of the order of .20/.05, i.e., that Type I errors are of the order of four times as serious as Type II errors. This .80 desired power convention is offered with the hope that it will be ignored whenever an investigator can find a basis in his substantive concerns in his specific research investigation to choose a value ad hoc."
 
 We see that conventions are built on conventions: the norm to aim for 80% power is built on the norm to set the alpha level at 5%. However, the real lesson Cohen was teaching us is to determine the relative seriousness of Type 1 and Type 2 errors, and to balance both types of errors when a study is designed. If a Type 1 error is considered to be four times as serious as a Type 2 error, the *weighted* error rates in the study are balanced. Instead of imitating the values chosen by Cohen, researchers should aim to imitate the approach he used to justify error rates.
 
@@ -63,11 +63,9 @@ We see that conventions are built on conventions: the norm to aim for 80% power 
 
 In 1957 Neyman wrote: "it appears desirable to determine the level of significance in accordance with quite a few circumstances that vary from one particular problem to the next." The mindless application of null hypothesis significance tests, including setting the alpha level at 5% for all tests, has been criticized for more than half a century [@bakan_test_1966; @gigerenzer_statistical_2018]. But it is difficult to abandon a mediocre research practice without an alternative.
 
-There are three main reasons to abandon the universal use of a 5% alpha level. The first reason to carefully choose an alpha level is that decision making becomes more efficient. If researchers use hypothesis tests to choose how to act while balancing error rates it is typically possible to make decisions more efficiently by setting the alpha level at a different value than 0.05. If we aim to either minimize or balance Type 1 and Type 2 error rates for a given sample size and effect size, the alpha level should be set not based on convention, but by weighting the relative costs of both types of errors.
+There are two main reasons to abandon the universal use of a 5% alpha level. The first reason to carefully choose an alpha level is that decision making becomes more efficient. If researchers use hypothesis tests to choose how to act while balancing error rates it is typically possible to make decisions more efficiently by setting the alpha level at a different value than 0.05. If we aim to either minimize or balance Type 1 and Type 2 error rates for a given sample size and effect size, the alpha level should be set not based on convention, but by weighting the relative costs of both types of errors.
 
-Second, an alpha of 5% often results in studies of low informational value. For example, when finding a non-significant result in a low powered study, the researcher cannot learn a lot from his experiment. Adjusting the alpha level in a way that both significant and non-significant findings are informative is important to mitigate this problem.
-
-The third reasons is that as the statistical power increases, some *p*-values below 0.05 (e.g., *p* = 0.04) can be more likely when there is *no* effect than when there *is* an effect. This is known as Lindley's paradox [@lindley_statistical_1957; @cousins_jeffreyslindley_2017]. The distribution of *p*-values is a function of the statistical power [@cumming_replication_2008], and the higher the power, the more right-skewed the distribution becomes (i.e. the more low *p*-values are observed). When there is no true effect *p*-values are uniformly distributed, and 1% of observed *p*-values fall between 0.04 and 0.05. When the statistical power is extremely high, not only will most *p*-values fall below 0.05, most will also fall below 0.01. In Figure \ref{fig:p-plot} we see that with high power very low *p*-values are more likely to be observed when there *is* an effect than when there is *no* effect (e.g., the black curve representing *p*-values when the alternative is true falls above the dashed horizontal line for a *p*-value of 0.01). But observing a *p*-value of 0.04 is more likely when the null hypothesis is true than when the alternative hypothesis is true and we have very high power (the horizontal dashed line falls above the black curve for *p*-values larger than 0.025).
+The second reasons is that as the statistical power increases, some *p*-values below 0.05 (e.g., *p* = 0.04) can be more likely when there is *no* effect than when there *is* an effect. This is known as Lindley's paradox [@lindley_statistical_1957; @cousins_jeffreyslindley_2017]. The distribution of *p*-values is a function of the statistical power [@cumming_replication_2008], and the higher the power, the more right-skewed the distribution becomes (i.e. the more low *p*-values are observed). When there is no true effect *p*-values are uniformly distributed, and 1% of observed *p*-values fall between 0.04 and 0.05. When the statistical power is extremely high, not only will most *p*-values fall below 0.05, most will also fall below 0.01. In Figure \ref{fig:p-plot} we see that with high power very low *p*-values are more likely to be observed when there *is* an effect than when there is *no* effect (e.g., the black curve representing *p*-values when the alternative is true falls above the dashed horizontal line for a *p*-value of 0.01). But observing a *p*-value of 0.04 is more likely when the null hypothesis is true than when the alternative hypothesis is true and we have very high power (the horizontal dashed line falls above the black curve for *p*-values larger than ~0.025).
 
 ```{r p-plot, fig.width=9, fig.height=5, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.cap="*P*-value distributions for a two-sided independent *t*-test with N = 150 and d = 0.5 (black curve) or d = 0 (horizontal dashed line) which illustrates how *p*-values just below 0.05 can be more likely when there is no effect than when there is an effect."}
 N<-150
@@ -114,7 +112,7 @@ res2$alpha
 res2$beta
 ```
 
-Researchers can decide to either balance Type 1 and Type 2 error rates (e.g., setting both at 5%), or minimize error rates. For any given sample size and effect size of interest there is an alpha level that minimizes the combined error rates. Because the chosen alpha level also influences the statistical power, and the Type 2 error rate is therefore dependent upon the Type 1 error rate, minimizing or balancing error rates requires an iterative procedure. Imagine researchers plan to perform a study which will be analyzed with an independent two-sided *t*-test. They initially plan to collect 50 participants per condition, and set their smallest effect size of interest to d = 0.5. They think a Type 1 error is just as severe as a Type 2 error, and believe H0 is just as likely to be true as H1. The combined error rate is minimized when they set $\alpha$ to `r format(res1$alpha, digits = 3, nsmall = 2)` (see Figure \ref{fig:weight-plot}, dotted line), which will give the study a Type 2 error rate of $\beta$ = `r format(res1$beta, digits = 3, nsmall = 2)` to detect effects of d = 0.5. The combined error rate is `r format((res1$beta + res1$alpha)/2, digits = 3, nsmall = 2)`, while it would have been `r format(((1-pwr::pwr.t.test(d = 0.5, n = 50, sig.level = 0.05, type = 'two.sample', alternative = 'two.sided')$power) + 0.05)/2, digits = 3, nsmall = 2)` if the alpha level was set at 5%^[For the same scenario, balanced error rates are $\alpha$ = `r format(res2$alpha, digits = 3, nsmall = 2)` and $\beta$ = `r format(res2$beta, digits = 3, nsmall = 2)`.
+Researchers can decide to either balance Type 1 and Type 2 error rates (e.g., setting both at 5%), or minimize error rates. For any given sample size and effect size of interest there is an alpha level that minimizes the combined error rates. Because the chosen alpha level also influences the statistical power, and the Type 2 error rate is therefore dependent upon the Type 1 error rate, minimizing or balancing error rates requires an iterative procedure. Imagine researchers plan to perform a study which will be analyzed with an independent two-sided *t*-test. They initially plan to collect 50 participants per condition, and set their smallest effect size of interest to d = 0.5. They think a Type 1 error is just as severe as a Type 2 error, and believe H0 is just as likely to be true as H1. The combined error rate is minimized when they set alpha to `r format(res1$alpha, digits = 3, nsmall = 2)` (see Figure \ref{fig:weight-plot}, dotted line), which will give the study a Type 2 error rate of beta = `r format(res1$beta, digits = 3, nsmall = 2)` to detect effects of d = 0.5. The combined error rate is `r format((res1$beta + res1$alpha)/2, digits = 3, nsmall = 2)`, while it would have been `r format(((1-pwr::pwr.t.test(d = 0.5, n = 50, sig.level = 0.05, type = 'two.sample', alternative = 'two.sided')$power) + 0.05)/2, digits = 3, nsmall = 2)` if the alpha level was set at 5%^[For the same scenario, balanced error rates are alpha = `r format(res2$alpha, digits = 3, nsmall = 2)` and beta = `r format(res2$beta, digits = 3, nsmall = 2)`.
 ]. Instead of choosing an example that is more extreme, I think it is important to point out that a better justified alpha level not necessarily means a hugely different alpha level. The absolute benefits are more noticeable for study designs where Type 2 error rates are high when a 5% alpha level would be used, or where the Type 2 error is very small and the alpha level can be reduced from 0.05. Similarly, Figure \ref{fig:weight-plot} shows that if one were to use an alpha level of 0.005 following recommendations of @benjamin_redefine_2018 when collecting a sample size of 100 per group to detect an effect of d = 0.5, the study would be much less efficient than it could be if a higher alpha level is chosen. The more important take-home message is that, perhaps counter-intuitively, decision making is sometimes slightly more efficient after *increasing* the alpha level from the default of 0.05. 
 
 ```{r weight-plot, fig.width=9, fig.height=5, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.cap="Weighted combined error rate (y-axis) for an independent *t*-test with n = 10, n = 50, and n = 100 per group and a smallest effect of interest of d = 0.5, for all possible alpha levels (x-axis)."}
@@ -201,9 +199,9 @@ Cohen (1988) considered a study design with a 5% Type 1 error rate and a 20% Typ
 
 Although it can be difficult to formally quantify all factors that determine the costs of Type 1 and Type 2 errors, there is no reason to let the perfect be the enemy of the good. In research questions where there are no direct applications of the research findings, relative costs might be largely subjective. If you have a research strategy where you always follow up on an initial study testing a theoretical prediction with a replication and extension study, and want to innovate, you might want to weigh a Type 2 error more strongly than a Type 1 error. If you are relatively sure policies will be changed based on the outcome of your single study, or it is unlikely many researchers will have the resources to replicate your study, a Type 1 error rate might be weighed more strongly than a Type 2 error. There are no right or wrong answers, but you need to think through this question when you design a study.
 
-If we adapt our calculations for the example above where researchers who plan to collect 50 participants per condition to detect a d = 0.5 effect, but now weigh the cost of Type 1 errors 4 times as much as Type 2 errors, balanced error rates are $\alpha$ = `r format(res3$alpha, digits = 3, nsmall = 2)` and $\beta$ = `r format(res3$beta, digits = 3, nsmall = 2)`. You will notice this is exactly the scenario Cohen describes, where a 5% Type 1 error rate and 20% Type 2 error rate is deemed a balanced design because Type 1 errors are weighed 4 times as much as Type 2 errors. 
+If we adapt our calculations for the example above where researchers who plan to collect 50 participants per condition to detect a d = 0.5 effect, but now weigh the cost of Type 1 errors 4 times as much as Type 2 errors, balanced error rates are alpha = `r format(res3$alpha, digits = 3, nsmall = 2)` and beta = `r format(res3$beta, digits = 3, nsmall = 2)`. You will notice this is exactly the scenario Cohen describes, where a 5% Type 1 error rate and 20% Type 2 error rate is deemed a balanced design because Type 1 errors are weighed 4 times as much as Type 2 errors. 
 
-One could also aim to minimize error rates in the latter scenario by setting $\alpha$ to `r format(res4$alpha, digits = 3, nsmall = 2)` and $\beta$ to `r format(res4$beta, digits = 3, nsmall = 2)`. Remember the cost of a Type 1 error is twice as large as the cost of a Type 1 error. Imagine a Type 1 error has a cost of 400 and a Type 2 error has a cost of 100. We perform 100 studies, 50 where H0 is true and 50 where H1 is true. We will make `r format(res4$alpha * 50, digits = 3)` Type 1 errors and `r format(res4$beta * 50, digits = 4)` Type 2 errors, with a respective cost of `r format(res4$alpha * 400 * 50, digits = 4)` and `r format(res4$beta * 100 * 50, digits = 4)`, respectively. Increasing or decreasing the alpha level for this design will only increase the total cost of errors, assuming H0 and H1 are equally probable. Figure \ref{fig:cost-plot} visualizes the weighted combined error rate for this study design across the all possible alpha levels.
+One could also aim to minimize error rates in the latter scenario by setting alpha to `r format(res4$alpha, digits = 3, nsmall = 2)` and beta to `r format(res4$beta, digits = 3, nsmall = 2)`. Remember the cost of a Type 1 error is twice as large as the cost of a Type 1 error. Imagine a Type 1 error has a cost of 400 and a Type 2 error has a cost of 100. We perform 100 studies, 50 where H0 is true and 50 where H1 is true. We will make `r format(res4$alpha * 50, digits = 3)` Type 1 errors and `r format(res4$beta * 50, digits = 4)` Type 2 errors, with a respective cost of `r format(res4$alpha * 400 * 50, digits = 4)` and `r format(res4$beta * 100 * 50, digits = 4)`, respectively. Increasing or decreasing the alpha level for this design will only increase the total cost of errors, assuming H0 and H1 are equally probable. Figure \ref{fig:cost-plot} visualizes the weighted combined error rate for this study design across the all possible alpha levels.
 
 ```{r cost-plot, fig.width=9, fig.height=5, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.cap="Weighted combined error rate (y-axis) for an independent *t*-test with n = 50 per group and a smallest effect of interest of d = 0.5, where Type 1 errors are weighed 4 times as much as Type 2 errors, for all possible alpha levels (x-axis)."}
 
@@ -229,7 +227,7 @@ w <- (costT1T2 * res6$alpha + priorH1H0 * (res6$beta)) / (priorH1H0 + costT1T2)
 
 ```
 
-If you want to balance or minimize error rates in the long run, you should lower the alpha level as the prior probability of a null effect increases, or increase the alpha level as the prior probability of a true effect increases. Because the base rate of true hypotheses is unknown, this step requires subjective judgment. This can not be avoided, because one always makes assumptions about base rates, even if the assumption is that a hypothesis is equally likely to be true as false (with both H1 and H0 having a 50% probability). Assuming equal prior probabilities for H1 and H0, we saw above that balanced error rates assuming d = 0.5 and collection n = 50 per condition in a *t*-test would imply $\alpha$ = `r format(res2$alpha, digits = 3, nsmall = 2)` and $\beta$ = `r format(res2$beta, digits = 3, nsmall = 2)`. If you assume the null hypothesis is 10 times more likely than the alternative hypothesis (or the alternative hypothesis is 0.1 times as likely as the null hypothesis) then balanced error rates would require setting $\alpha$ to `r format(res5$alpha, digits = 3, nsmall = 2)` and $\beta$ to `r format(res5$beta, digits = 3, nsmall = 2)`. If you believe the alternative hypothesis is twice as likely to be true as the null hypothesis, balancing error rates in the long run would mean increasing the alpha level and increasing the power by choosing $\alpha$ = `r format(res6$alpha, digits = 3, nsmall = 2)` and $\beta$ = `r format(res6$beta, digits = 3, nsmall = 2)`.
+If you want to balance or minimize error rates in the long run, you should lower the alpha level as the prior probability of a null effect increases, or increase the alpha level as the prior probability of a true effect increases. Because the base rate of true hypotheses is unknown, this step requires subjective judgment. This can not be avoided, because one always makes assumptions about base rates, even if the assumption is that a hypothesis is equally likely to be true as false (with both H1 and H0 having a 50% probability). Assuming equal prior probabilities for H1 and H0, we saw above that balanced error rates assuming d = 0.5 and collection n = 50 per condition in a *t*-test would imply alpha = `r format(res2$alpha, digits = 3, nsmall = 2)` and beta = `r format(res2$beta, digits = 3, nsmall = 2)`. If you assume the null hypothesis is 10 times more likely than the alternative hypothesis (or the alternative hypothesis is 0.1 times as likely as the null hypothesis) then balanced error rates would require setting alpha to `r format(res5$alpha, digits = 3, nsmall = 2)` and beta to `r format(res5$beta, digits = 3, nsmall = 2)`. If you believe the alternative hypothesis is twice as likely to be true as the null hypothesis, balancing error rates in the long run would mean increasing the alpha level and increasing the power by choosing alpha = `r format(res6$alpha, digits = 3, nsmall = 2)` and beta = `r format(res6$beta, digits = 3, nsmall = 2)`.
 
 The two approaches (balancing error rates or minimizing error rates) typically yield quite similar results. Where minimizing error rates might be slightly more efficient, balancing error rates might be slightly more intuitive (especially when the prior probability of H0 and H1 are equal). Note that although there is always an optimal choice of the alpha level, there is always a range of values that yield quite similar weighted error rates. It is useful to plot weighted error rates as in Figure \ref{fig:cost-plot}. To balance or minimize error rates, researchers need to carefully consider the relative cost of Type 1 and Type 2 errors, the prior probability the null hypothesis is true, and the effect size they want to detect [@mudge_setting_2012], because these factors are used to calculate the weighted combined error rates *w*: 
 
@@ -238,114 +236,66 @@ The two approaches (balancing error rates or minimizing error rates) typically y
 \label{eq:minimize}
 \end{equation}
 
-For example, imagine Type 1 errors are weighted 4 times as much as Type 2 errors ($cost_{T1T2}$ = 4) and the alternative hypothesis is believed to be 2 times as likely as the null hypothesis ($prior_{H1H0}$ = 10). With $\alpha$ = `r format(res6$alpha, digits = 3, nsmall = 2)` and $\beta$ = `r format(res6$beta, digits = 3, nsmall = 2)` the weighted combined error rate is `r format(w, digits = 3, nsmall = 2)`.
+For example, imagine Type 1 errors are weighted 4 times as much as Type 2 errors ($cost_{T1T2}$ = 4) and the alternative hypothesis is believed to be 2 times as likely as the null hypothesis ($prior_{H1H0}$ = 10). With alpha = `r format(res6$alpha, digits = 3, nsmall = 2)` and beta = `r format(res6$beta, digits = 3, nsmall = 2)` the weighted combined error rate is `r format(w, digits = 3, nsmall = 2)`.
 
-## Probability-Based Alpha Level Justifications
+### Sample Size Justification when Minimizing/Balancing Error Rates
 
-A second approach to justifying alpha levels is based on the posterior probability after conducting a statistical test, or the change in belief between prior and posterior. This combines Frequentist and Bayesian approaches for statistical inference [for a discussion of Bayesian - Frequentist compromises in statistical inference see e.g., @good_bayes/non-bayes_1992; @colquhoun2017reproducibility]. Given $\alpha$, $\beta$, and the prior probability of a hypothesis, we can calculate the posterior probability after a significant *p*-value using Bayes rule as in equation \ref{eq:confirmation}.
+So far we have only considered cases, where researchers wanted to justify their alpha level on a fixed sample size. However, in practice researchers should justify their sample size before running a study. The approach of balancing or minimizing error rates can straightforwardly be generalized to a sample size justification. To do so researchers need to specify the weighted combined error rate they are aiming for. The required sample size, significance level, and power can be determined accordingly. 
 
-\begin{equation}
-p(H_1/+) = \frac{(1-\beta) \times p(H_1)}{(1-\beta) \times p(H_1)+ \alpha \times (1-p(H_1))}
-\label{eq:confirmation}
-\end{equation}
+```{r, include = FALSE}
+res7 <- optimal_sample(power_function = "pwr::pwr.t.test(d = 0.5, n = i, sig.level = x, type = 'two.sample', alternative = 'two.sided')$power")
 
-In the same way we can calcualte the probability of the hypothesis being true after a non-significant *p*-value (equation \ref{eq:disconfirmation}).
-
-\begin{equation}
-p(H_1/-) = \frac{\beta \times p(H_1)}{\beta \times p(H_1)+(1-\alpha) \times (1-p(H_1))}
-\label{eq:disconfirmation}
-\end{equation}
-
-These two equations give rise to different ways of justifying alpha levels. In the next sections, we show how to justify alpha based on (1) optimizing the overall informational value of a study, (2) the posterior probability after either a significant or non-significant result and (3) a power analysis indicating the sample size and alpha needed to arrive at posterior probabilities specified for both a significant and non-significant result. 
-
-### Optimizing Informational Value
-
-The goal of this approach is setting alpha in a way that optimizes the amount of learning by conducting a statistical test. Learning is defined as the expected correct change between the probability of a hypothesis before and after conducting a statistical test ($\delta$ L). From equations \ref{eq:confirmation} and \ref{eq:disconfirmation} it is possible to calculate the expected correct change in belief or learning with a given $\alpha$. First, we calculate the difference between prior and posterior for a significant and non-significant result as in equations \ref{eq:confirmation} and \ref{eq:disconfirmation}. Then we determine the probability of the four possible outcomes, true positive ($p(H-1)*(1-\beta)$, true negative ($(1-p(H_1)*(1-\alpha)$), false positive ($(1-p(H_1))*\alpha$), and false negative ($p(H_1)*\beta$). The change in belief after a false negative or a false positive is a form of "unlearning" since it makes the belief in a hypothesis less correct. Therefore, the expected correct change in belief ($\delta$ L) can be calculated by subtracting the change after a false negative and false positive from the change after a true negative or true positive (equation \ref{eq:L}).
-
-\begin{equation}
-\label{eq:L}
-\begin{aligned}
-\delta L = p(H_1) \times (1-\beta) \times (p(H_1/+)-p(H_1))+ \\ (1-p(H_1)) \times (1-\alpha) \times (p(H_1)-p(H_1/-)) - \\ (1-p(H_1)) \times \alpha \times (p(H_1/+)- p(H_1))- \\ p(H_1) \times \beta \times (p(H_1)-p(H_1/-))
-\end{aligned}
-\end{equation}
-
-
-```{r,echo = FALSE, message = FALSE, warning = FALSE, include = FALSE }
-source("idealalpha.R")
-stroop1 <- idealalpha(200, 0.2, 0.2, test = "t-test", type = "one.sample")
 ```
 
-Let us clarify this idea using an example. A group of researchers studies a new animal Stroop paradigm to test cognitive control in children. They display sad and happy animal faces under the words "sad" and "happy". Participants need to classify the emotion of the animal as fast as possible. However, they are uncertain whether the children can identify the animal emotions correctly and their pilot study had mixed results. Therefore, the prior probability of their hypothesis is 0.2 and the expected effect size is *d* = 0.2. They test 200 participants and analyze their data using a within-sample *t*-test. In this context, the significance level with the highest $\delta L$ is $\alpha$ = `r stroop1$alpha` with a power of `r stroop1$power` and an expected learning of `r stroop1$Learning` Thus, the research group uses this alpha level for their first study. To their positive surprise the result is significant. They calculate the posterior probability of  `r postconfirm(stroop1$power, stroop1$alpha, 0.2)` according to equation \ref{eq:confirmation}. See Figure \ref{fig:idealalpha1} for expected learning as a function of $\alpha$ level.
+Let us illustrate this using the example of researchers studying an effect of *d* = 0.5 with a two sample *t*-test. We can estimate the sample size as well as the alpha and power they would require to achieve a weighted combined error rate of 5% when weighting Type 1 errors and Type 2 errors equally strong. Figure \ref{fig:error-plot} shows alpha, beta, and the weighted combined error rate as a function of sample size when the alpha level is minimized. We can see that a weighted combined error rate of 5% (red line) is achieved at a sample size of `r res7$samplesize`. By iteratively optimizing the alpha level for different sample sizes and stopping when the desired error rate is reached, we can justify our sample size and the alpha level at the same time. 
 
-```{r idealalpha1, fig.width=9, fig.height=5, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.cap="Expected learning for different alpha levels. The blue line indicates the optimal alpha, the red line alpha 0.05"}
-
-idealalpha(200, 0.2, 0.2, test = "t-test", type = "one.sample")
+```{r, include=FALSE}
+# alphas <- c()
+# betas <-c()
+# Error <-c()
+# 
+# power_function = "pwr::pwr.t.test(d = 0.5, n = i, sig.level = x, type = 'two.sample', alternative = 'two.sided')$power"
+# for (i in 10:150) {
+# res <- optimal_alpha(power_function = paste(stringr::str_replace(power_function, "n = i", paste("n  =", i))))
+# alphas <- c(alphas, res$alpha)
+# betas <- c(betas, res$beta)
+# Error <- c(Error, res$errorrate)
+# }
+# 
+# data <- as.data.frame(cbind(alphas, betas, Error))
+# write.csv(data, "plotdata.csv")
 ```
 
 
-```{r,echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
-stroop2 <- idealalpha(200, 0.2, 0.830718, test = "t-test", type = "one.sample")
+```{r, include = FALSE}
+data <- read.csv("plotdata.csv")
+samplesize <- 10:150
+line <- rep(0.05, length(samplesize))
+data <- as.data.frame(cbind(samplesize,line, data))
+
+colors <- c("Beta" = "blue", "5%" = "red", "Weighted Combined Error Rate" = "black", "Alpha" = "green")
+
+library(ggplot2)
+plot <- ggplot(aes(x=samplesize), data=data) +
+    geom_line(size = 1.3, aes(y = Error, color = "Weighted Combined Error Rate")) +
+    theme_minimal(base_size = 18) +
+    scale_x_continuous("Sample Size", seq(10,150,20)) +
+    scale_y_continuous("",seq(0,1,0.05), limits = c(0,0.5)) + 
+    geom_line(aes(y=alphas,  color = "Alpha"), data=data, size = 1.3) + 
+    geom_line(aes(y=betas,  color = "Beta"), data=data, size = 1.3) +  
+    geom_line(aes(y=line,  color = "5%"), data=data, size = 1.3) +
+      labs(x = "Sample Size",
+         y = "",
+         color = "") +
+    scale_color_manual(values = colors) +
+  theme(legend.position="bottom")
+    
 ```
-To corroborate the finding more strongly, the researchers decide to conduct a replication with the same sample size. This time their ideal alpha level is `r stroop2$alpha` with a power of `r stroop2$power` and an expected learning of `r stroop2$info` (Figure \ref{fig:idealalpha2}).
 
-```{r idealalpha2, fig.width=9, fig.height=5, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.cap="Expected learning for different alpha levels in the replication study. The blue line indicates the optimal alpha of stroop1$alpha, the red line alpha 0.05. Note that the higher prior probability results in higher optimal alpha levels"}
+```{r error-plot, fig.width=10, fig.height=6, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.cap="Weighted combined error rate (black), alpha (green), and beta (blue) for an independent *t*-test as a function of sample size when the alpha level is justified to achieve lowest errors at each sample size."}
 
-idealalpha(200, 0.2,  0.830718, test = "t-test", type = "one.sample")
+plot
 ```
-
-The example shows, how optimizing informational value can be the method of choice, especially in basic research where the costs of different errors are often difficult to asses. In addition, when the prior probability of a hypothesis is high, it is often beneficial to increase the significance level. By increasing the significance level the researchers can expect to learn  `r stroop2$Learning/stroop2$Learning05` as much by conducting the replication compared to the conventional significance level. Note the similarity to minimizing error rates, where a higher prior probability also justifies using a higher alpha level. 
-
-### Aiming for Posterior Probabilities. 
-
-Researchers usually want to avoid false positives. Specifying the $\alpha$ level in a way that the posterior probability after conducting a statistical test is above a certain threshold (e.g., 95%) based on equation \ref{eq:confirmation} is a way to formally control the number of positive findings. Note that the idea of interpreting *p*-values and $\alpha$ levels based on the posterior probability of a significant result has been proposed in the past [e.g., @colquhoun2019false; @oberauer2019addressing; @colquhoun2017reproducibility]. However, since it is an important aspect of the proposed framework of probability-based approaches to $\alpha$ level justification we present it again here.
-
-```{r,echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
-precog <- alphaConfirmation(150, 0.2, 0.01, 0.5, test = "t-test", type = "one.sample")
-```
-
-As an example, @bem2011feeling tries to show that people are capable of precognition, in other words, anticipating future events that they could not have predicted through any known inferential process. Since precognition seems to be a phenomenon with low prior probability and the existence of the effect would have several unlikely implications (e.g., it is unlikely that casinos would be as lucrative if players could feel the future), we assume the prior probability of precognition to be only 1%. In the first study reported in @bem2011feeling on precognitive detection of erotic stimuli, data from 100 students is analyzed using a within-sample *t*-test. Results indicate that participants correctly identified the future positions of erotic pictures more frequently than expected by chance (*t*(99) = 2.51, *p* = .01, *d* = 0.25). 
-Let us consider which $\alpha$ level would be needed to make the existence of precognition 50% likely after finding a positive result.
-Based on the formula in equation 1, the required alpha level would be at least $\alpha$ = `r printnum(precog$alpha, digits = 3)` with a power of `r precog$power`. In other words, @bem2011feeling would have needed to test his predictions against an extremely low alpha level, to achieve sufficient probability after a significant result and his experiment does not provide strong evidence for the existence of precognition.  
-
-While researchers tend to focus strongly on controlling false positives, it has been argued that false negatives, pose an evenly large problem to science [@fiedler2012long]. Especially in contexts where the costs of not detecting an important effect are large, researchers want to be certain that an effect of the smallest effect size of interest is absent if we do not find a significant result.  In this case, it is useful to set the significance level in a way that the probability of the hypothesis as in equation \ref{eq:disconfirmation} is below a certain value after a non-significant test. 
-
-```{r,echo = FALSE, message = FALSE, warning = FALSE }
-  library(powerAnalysis)
-  prior <- 0.7
-  postdis <- 0.1
-  alpha   <- seq(0,1,.00001) #define vector of alphas
-  #calculate powers 
-  power  <- power.prop.test(30, p1 = 1, p2 = 0.8, sig.level = alpha)$power
-  confirm <- postconfirm(power, alpha, prior)
-  disconf <- postdisconfirm(power, alpha, prior)
-  info <- information(confirm, disconf, power, alpha, prior)
-  df <- as.data.frame(cbind(alpha,power,info, disconf))
-  #f <- max(na.omit(info))
-  maxinf <- max(na.omit(info))
-  postd <- as.data.frame(subset(df, disconf > postdis))
-  postd <- min(postd$disconf)
-  d <- subset(df, disconf == postd)
-```
-Let us illustrate this with an adapted version of the example from @field2004minimizing.\footnote{Field et. al(2004) conduct a simulation-based power analysis based on the idea of a virtual ecologist, however, the code for this anylsis is not available} A group of ecologists observes two small panda populations in eastern Australia. Near the habitat of one of the populations a new chemical company is built. Although the company ensures that the pandas are in no danger, the researchers are concerned that the toxic waste poses a threat to the panda population. Their prior belief that the waste is harmful is 70%. Therefore, they use a contingency test to investigate whether the survival of the pandas near the company is reduced compared to the other panda group. They estimate that toxic waste might reduce the panda population by about 20%. Since pandas are a species of extreme ecological and economical value [e.g., @hamilton2000economic], the researchers are more concerned about false negatives than false positives. Therefore, they want to set their significance level in a way, that the probability of the waste threatening the health of the pandas after a negative result is only 10%. 
-Based on equation 2, they would need to use an $\alpha$ of at least `r d$alpha` with a power of `r d$power` to achieve this. 
-The example shows that when we want to be reasonably certain that the null hypothesis is true after testing we often need to use high power to reduce type 2 errors. This often implies high $\alpha$ levels, especially given small sample size. If the effect is not significant using this $\alpha$ level, this indicates a certain probability of the null hypothesis to be true, an idea similar to equivalence testing [e.g., @lakens2018equivalence].
-
-### Probability-Based Power Analysis
-
-However, usually researchers want to control the probability of both type one and type two errors. In this context, they can specify the prior, the intended posterior probability after a significant result, and the intended probability after a non-significant result. We developed a probability-based power analysis (PAPA) that then estimates the minimum required sample size as well as the needed significance threshold to achieve the desired posterior probabilities. 
-```{r,echo = FALSE, message = FALSE, warning = FALSE, include = FALSE }
-powerCovid <- probpower(0.15, 0.5, 0.2, 0.95)
-```
-To explain PAPA let us imagine a group of researchers that want to conduct a new study on the framing of persuasion messages to increase compliance with social distancing to control the spread of COVID-19. Since small effect sizes can already safe lives they put their smallest effect size of interest to d = 0.15. Their prior belief in the effect of the tested framing is 50%. Because of the high stakes situation, they want to be at least 95% sure that the effect is present after finding a positive result and 80% sure that it is absent after a negative result. 
-PAPA indicates that they would need a sample size of `r powerCovid$n` per group with an $\alpha$ of `r powerCovid$alpha`and power of `r powerCovid$power`. 
-The example shows that for researchers that want to control both errors and have the capacities to increase their sample accordingly, PAPA should be the method of choice to enable strong inference.
-
-### Discussion Probability-Based Approaches 
-
-We have now presented three ways to justify alpha levels based on the posterior probability or the change in probability. The first method, optimizing the informational value of a study, is especially useful in theoretical research, when the researcher has no strong opinion regarding which type of error is more costly. If the researcher wants to specifically avoid false positives or false negatives the approach of aiming for specific posterior probabilities is the most suitable. However, usually researchers care about both, false positives and false negatives, here a probability-based power analysis will help to justify the sample size and $\alpha$ level needed to control both types of errors. PAPA is based on calculating the alpha level needed to achieve sufficient posterior probability after a significant result and then repeating this process over different sample sizes until the probability after a significant and a non-significant result are in line with the specifications of the researcher. 
-
-An interesting question is also, how this approach relates to Bayesian statistical inference. While equation \ref{eq:confirmation} and \ref{eq:disconfirmation} are based on Bayes theorem, our approach is still a form of significance testing. There are certain advantages to Bayesian procedures such as the ability to stop conditional on the evidence and to quantify evidence for the null hypothesis and the alternative continuously [@wagenmakers2016bayesian]. However, our approach might be more easy to learn for researchers already familiar with classical statistics and does not require to specify a parameter prior distribution under the alternative hypothesis. In practice researchers might want to report 'a B for every *p*', or a Bayes factor for every *p*-value [@dienes_four_2017], and take any disagreement between these two approaches (which should be quite rare in practice according to Jeffreys, 1939) as a reason to be cautious when drawing conclusions from the data. 
-
 
 ## Lowering the Alpha Level as a Function of the Sample Size
 
@@ -354,61 +304,74 @@ Sometimes a researcher might feel it is too challenging to specify relative cost
 To understand these recommendations it is important to distinguish between statistical inferences based on error control and inferences based on likelihoods. An alpha level of 5% will limit incorrect decisions to a desired maximum (in the long run, and when all test assumptions are met). However, from a likelihood perspective it is possible that the observed data is much more likely when the null hypothesis is true, than when the alternative hypothesis is true, even when the observed *p*-value is smaller than 0.05. This situation, known as Lindley's paradox, is visualized in Figure \ref{fig:p-plot}. It emerges because the critical value of a frequentist test approaches a limit as the sample size increases (e.g., *t* = 1.96 for a two-sided *t*-test). In Bayesian statistics the same Bayes factor requires a larger test statistic when the sample size is larger (see @rouder_bayesian_2009 and @zellner_introduction_1971). 
 
 To prevent Lindley's paradox when using frequentist statistics one would need to adjust the alpha level in a way that the likelihood ratio (also called the Bayes factor) at the critical test statistic is always one. With such an alpha level, a significant *p*-value will always be as least as likely if the alternative is true than if the null is true, successfully avoiding the Lindley paradox. @faulkenberry2019estimating and @rouder2009bayesian developed Bayes factors for *t*-tests and ANOVAs which can calculate the Bayes factor from the test statistic and degrees of freedom.
-Based on these papers we developed a shiny app (link) to reduce the alpha level proportional to the sample size and avoid the Lindley paradox. However, one might ask, whether there is not still a paradox if we reject the null hypothesis even so the evidence for the alternative from a Bayesian point of view is only weak as the case with a likelihood ratio of one. To reliably avoid false positives one would need a tool in which a significant *p*-value corresponds to moderate or strong evidence from a likelihoodist or Bayesian perspective. As a rule of thumb, if the data is 3 to 10 times more likely under the alternative than under the null this is considered moderate evidence, and data more than 10 times more likely under the alternative is considered strong evidence [@Jeffreys1939, Appendix 1; @LeeWagenmakersBayesBook, p. 105]. Therefore, we extended the shiny app to also allow researchers to adjust the alpha level in a way that a significant *p*-value will always provide moderate or strong evidence against the null hypothesis.  
+Based on these papers we developed a shiny app (link) to reduce the alpha level proportional to the sample size and avoid Lindley's paradox. However, it can be considered evenly paradoxical to reject the null hypothesis even so the evidence for the alternative from a Bayesian point of view is only weak as the case with a likelihood ratio of one. To reliably avoid false positives one would need a tool in which a significant *p*-value corresponds to moderate or strong evidence from a likelihoodist or Bayesian perspective. As a rule of thumb, if the data is 3 to 10 times more likely under the alternative than under the null this is considered moderate evidence, and data more than 10 times more likely under the alternative is considered strong evidence [@Jeffreys1939, Appendix 1; @LeeWagenmakersBayesBook, p. 105]. Therefore, we extended the shiny app to also allow researchers to adjust the alpha level in a way that a significant *p*-value will always provide moderate or strong evidence against the null hypothesis.  
 
-Our calculations are based on a unit information prior. This prior is relatively wide which sometimes results in overstated evidence for H0. However, while it is usually wise to use more informed priors [e.g., @mcelreath2020statistical], we believe that to avoid the Lindley paradox a wide prior is the more conservative choice. In other words, it will prevent overstating the evidence for H1 and consequently be more likely to use an alpha level that is too low, rather than an alpha level that is too high. In addition, in contrast to previous approaches that aimed to calculate a Bayes factor for every *p*-value [e.g., @colquhoun2019false; @colquhoun2017reproducibility] our application does not require researchers to specify the effect size under the alternative. Although the unit information prior is still an expectation for H1, not needing to specify the prior directly will likely increase the adoption among empirical researchers who sometimes find it difficult to specify a smallest effect size of interest or an expected effect size. 
+Our calculations are based on a unit information prior.\footnote{For t-tests the shiny app also allows to use the more common Cauchy prior.} This prior is relatively wide which sometimes results in overstated evidence for H0. However, while it is usually wise to use more informed priors [e.g., @mcelreath2020statistical], we believe that to avoid the Lindley paradox a wide prior is the more conservative choice. In other words, it will prevent overstating the evidence for H1 and consequently be more likely to use an alpha level that is too low, rather than an alpha level that is too high. In addition, in contrast to previous approaches that aimed to calculate a Bayes factor for every *p*-value [e.g., @colquhoun2019false; @colquhoun2017reproducibility] our application does not require researchers to specify the effect size under the alternative. Although the unit information prior is still an expectation for H1, not needing to specify the prior directly will likely increase the adoption among empirical researchers who sometimes find it difficult to specify a smallest effect size of interest or an expected effect size. 
 
-Let us illustrate this using the example of @van2015gender which compare the success of grant applications in female and male applicants (n = 2823). For example, their results indicate that women where less likely to be prioritized in preselection interviews than men, F(1, 2388) = 7.94, *p* = 0.0049.\footnote{in the original paper the authors report an incorrectly calculated *p*-value of 0.01} However, given the high sample size it seems desirable to reduce the alpha level considerably based on the reasoning above. 
+Let us illustrate this using one example study from the Deryl Bem's infamous paper on ''feeling the future'' [@bem2011feeling]. In this paper Derly Bem claimed in a series of 9 studies that he found evidence for a phenomenon called *psi* which allows humans to predict the future. The publication of this implausible result in a well-known psychological journal, has sparked wide spread discussion about the replicability and data anlysis practices in psychology [e.g., @ritchie2012failing, @wagenmakers2011psychologists, @galak2012correcting].
+
+In study six of his paper, Bem reports the following one sample *t*-tests $t$(149) = 1.80, $p$ = .037, $d$ = 0.15, $p$ = .041 and $t$(149) = 1.77, $p$ = .039, $p$ = .041, as evidence for ''retroactive habituation''. It seems like the $p$-values in this study are remarkably close to the 5% threshold, especially given the high sample size. Therefore, let us consider which alpha level Bem would have needed to use to avoid Lindley's Paradox, and to achieve moderate or strong evidence. 
 
 ```{r,echo = FALSE, message = FALSE, warning = FALSE, include = FALSE }
-bf_bic <- function(F, df1, df2, repeated=FALSE, report.as="BF10") {
-  if (repeated==FALSE) {
-    N = df1+df2+1
-  } 
-  else {
-    N = df1+df2
-  }
-  
-  bf = sqrt(N^df1*(1+F*df1/df2)^(-1*N))
-  
-  if (report.as=="BF01"){
-    return(c(B01=bf))
-  }
-  else {
-    return(c(B10=1/bf))
-  }
-}
-
-alpha_f.test_solve <- function(x, df1, df2, evidence, paired){
-  (evidence - bf_bic(x, df1, df2, paired))^2
-}
-
-f.testAlpha <- function(evidence, df1, df2, paired = FALSE){
-  
-  crit_f <- optim(2, alpha_f.test_solve, lower = 0, upper = Inf, method = "L-BFGS-B",
-                  df1 = df1, df2 = df2, evidence = evidence, paired = paired)$par
-  alpha <- (1 - pf(crit_f, df1, df2))
-  
-  return(alpha)
-}
-
-lindley  <- f.testAlpha(1,  1, 2388)
-moderate <- f.testAlpha(3,  1, 2388)
-strong   <- f.testAlpha(10, 1, 2388)
+lindley  <- ttestEvidence(1,  150)
+moderate <- ttestEvidence(3,  150)
+strong   <- ttestEvidence(10, 150)
 
 ```
 
-Indeed, to avoid Lindley's paradox, the researchers need to use an alpha level of `r printnum(lindley, digits = 4)`. In other words, the observed *p*-value provides only very weak evidence for the alternative. However, it seems desirable to require at least moderate evidence for the alternative before claiming a discovery. To achieve this the researchers would need to use a alpha level of `r printnum(moderate, digits = 4)`. To provide strong evidence given a significant *p*-value, they would need an even lower alpha level of `r printnum(strong, digits = 4)`. We can see from this example, that *p* = 0.05 is too low of an evidential standard under large sample sizes.
+To avoid Lindley's paradox, Bem would need to use an alpha level of `r printnum(lindley, digits = 4)`. In other words, the observed *p*-value is more likely under the null hypothesis than under the alternative. However, it seems desirable to require at least moderate evidence for the alternative before claiming a discovery. To achieve this Bem would have needed to use a alpha level of `r printnum(moderate, digits = 4)`. To provide strong evidence given a significant *p*-value, he would have needed to use an even lower alpha level of `r printnum(strong, digits = 4)`. We can see from this example, that *p* = 0.05 is too low of an evidential standard under large sample sizes.
 
 Although in principle for small sample sizes the function could return an alpha level *larger* than 0.05, this is not the intended use. The reason for this is that we do not aim to replace the frequentist error rates with likelihood ratios but merely to reliably identify the cases where both approaches to statistical inference come to the same conclusions.
 
+## Comparison of The Two Approaches
+
+When should we minimize or balance error rates and when should we avoid the Lindley paradox? In practice, it might be most convenient to use the first approach, whenever there is enough information to conduct power analysis, and if not to fall back on the second approach. Alternatively, one can also apply both approaches and choose the one that is more conservative (i.e., results in a lower alpha level). In addition, researchers aiming to find a compromise between Frequentist and Bayesian inference might be drawn more strongly towards the second approach [e.g., @good_bayes/non-bayes_1992]. 
+
+Figure \ref{fig:heatmap} shows which alpha level is larger as a function of sample size (per group) and expected effect size for a two-sample *t*-test. For green values minimizing error rates resulted in higher alpha values, whereas red areas mean that avoiding the Lindley paradox resulted in higher alpha levels. We can see that when the expected effect size increases (x-axis) the alpha level will be smaller when using the method that minimizes error rates. This is mostly a result of how we set up the likelihood ratio calculations. Due to the unit information prior the method trying to avoid the Lindley paradox is not sensitive to the expected effect size. If the sample size increases on the other hand (y-axis) the alpha level reduces faster when avoiding the Lindley paradox then when minimizing error rates. 
+
+```{r, include = FALSE}
+# alphalogodds <- c()
+# ds <- c()
+# samples <- c()
+# power_function <- "pwr::pwr.t.test(d = x, n = 50, sig.level = x, type = 'two.sample', alternative = 'two.sided')$power"
+# power_function_d <- ""
+# for (d in seq(0.2,1, 0.025)) {
+#   power_function_d = paste(stringr::str_replace(power_function, "d = x", paste("d  =", d)))
+#   for (sample in seq(10, 300, 10)) {
+#     alpha1 <- optimal_alpha(power_function = paste(stringr::str_replace(power_function_d, "n = i", paste("n  =", i))))$alpha
+#     alpha2 <- ttestEvidence("lindley", sample, sample)
+#     alphalogodds <- c(alphalogodds, log(alpha1/alpha2))
+#     ds <- c(ds, d)
+#     samples <- c(samples, sample)
+#     }
+#   }
+# 
+# library(tidyr)
+# plotd <- as.data.frame(cbind( samples, ds, alphalogodds))
+# write.csv(plotd, "plotdata2.csv")
+```
+
+```{r heatmap, fig.width=6, fig.height=5, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.cap="Heatmap of log(alpha_minimize/alpha_lindley) as a function of sample size and expected effect size."}
+
+plotd <- read.csv("plotdata2.csv")
+ggplot(plotd, aes(ds, samples)) +
+  geom_tile(aes(fill = alphalogodds)) + 
+  scale_fill_gradient(low = "red", high = "green") + 
+  theme_minimal() +
+  scale_x_continuous(expand = c(0,0)) + 
+  scale_y_continuous(expand = c(0,0), breaks = c(seq(0,300, 20))) + 
+        labs(x = "Cohen's d",
+         y = "Sample Size",
+         fill = "")
+```
+
 # Discussion
 
-Editors and reviewers should *always* ask authors to justify their choice of error rates, whenever researchers use data to make decisions about the presence or absence of an effect. As @skipper_sacredness_1967 remarks: "If, in contrast with present policy, it were conventional that editorial readers for professional journals routinely asked: "What justification is there for this level of significance?" authors might be less likely to indiscriminately select an alpha level from the field of popular eligibles." In a Neyman-Pearson approach to statistics, the alpha level should be set before the data is collected. When reviewers of for example a Registered Report would ask authors to justify their alpha level, it would be convenient if they can recommend some approaches to do so. The current manuscript hopefully helps to fill this gap. 
+Editors and reviewers should *always* ask authors to justify their choice of error rates, whenever researchers use data to make decisions about the presence or absence of an effect. As @skipper_sacredness_1967 remarks: "If, in contrast with present policy, it were conventional that editorial readers for professional journals routinely asked: "What justification is there for this level of significance? authors might be less likely to indiscriminately select an alpha level from the field of popular eligibles." In a Neyman-Pearson approach to statistics, the alpha level should be set before the data is collected. When reviewers of for example a Registered Report would ask authors to justify their alpha level, it would be convenient if they can recommend some approaches to do so. The current manuscript hopefully helps to fill this gap. 
 
 If a power analysis can be performed (i.e., whenever a desired or expected effect size of interest can be specified) and relative costs and priors can be specified, researchers can design efficient by minimizing or balancing error rates, optimizing informational value, or aiming for specific posterior probabilities. If it is difficult to specify these aspects of the study, researchers can fall back to the approach where the alpha level is reduced as a function of the sample size. 
 
-A Shiny app is avaiable that allows users to perform the calculations recommended in this article. It can be used to minimize or balance $\alpha$ and $\beta$, which works by specifying the effect size of interest and the sample size, as well as an analytic power calculation. The effect size should be determined as in a normal a-priori power analysis (preferably based on the smallest effect size of interest, for recommendations, see @albers_when_2018), and the sample size can be increased until the error rates are deemed acceptable. Alternatively, researchers lower the alpha level as a function of the sample size by spacifying their sample size. Whichever approach is used, it is strongly recommended to preregister the alpha level that researchers plan to use before the data is collected.
+A Shiny app is available that allows users to perform the calculations recommended in this article. It can be used to minimize or balance alpha and beta, which works by specifying the effect size of interest and the sample size, as well as an analytic power calculation. The effect size should be determined as in a normal a-priori power analysis (preferably based on the smallest effect size of interest, for recommendations, see @albers_when_2018). Alternatively, researchers lower the alpha level as a function of the sample size by specifying only their sample size. Whichever approach is used, it is strongly recommended to preregister the alpha level that researchers plan to use before the data is collected.
 
 Because of the strong overreliance on a 5% error rate when designing studies, we have seen relatively few people attempt to justify their alpha level. As researchers start to justify their alpha, we will hopefully see the development of good examples and best practices for psychological science. It might be a challenge to get started, but the two approaches presented in the current article are one way to move away from the mindless use of a 5% alpha level. There is a lot to gain, and justifying alpha levels should improve our statistical inferences and increase the efficiency of the research we perform.
 
