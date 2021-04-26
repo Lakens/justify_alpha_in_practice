@@ -4,19 +4,19 @@
 %
 \documentclass[
   english,
-  ,man,floatsintext]{apa6}
+  ,jou, a4paper,floatsintext]{apa6}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{heuristica}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -39,6 +39,7 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
   pdftitle={Justify Your Alpha: A Practical Guide},
+  pdfauthor={Maximilian Maier1 \& Daniel Lakens2},
   pdflang={en-EN},
   pdfkeywords={hypothesis testing, Type 1 error, Type 2 error, statistical power},
   hidelinks,
@@ -100,33 +101,48 @@
 % \setlength{\parindent}{0.5in}
 % \setlength{\parskip}{0pt plus 0pt minus 0pt}
 
+% Overwrite redefinition of paragraph and subparagraph by the default LaTeX template
+% See https://github.com/crsh/papaja/issues/292
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries\itshape\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-\z@\relax}%
+  {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
 % \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\HyOrg@maketitle}
   {\section{\normalfont\normalsize\abstractname}}
   {\section*{\normalfont\normalsize\abstractname}}
   {}{\typeout{Failed to patch abstract.}}
+\patchcmd{\HyOrg@maketitle}
+  {\section{\protect\normalfont{\@title}}}
+  {\section*{\protect\normalfont{\@title}}}
+  {}{\typeout{Failed to patch title.}}
 \makeatother
 \shorttitle{Justify in Practice}
-\author{Maximilian Maier\textsuperscript{1}\ \& Daniel Lakens\textsuperscript{2}}
-\affiliation{
-\vspace{0.5cm}
-\textsuperscript{1} University of Amsterdam, The Netherlands\\\textsuperscript{2} Eindhoven University of Technology, The Netherlands}
-\authornote{All code used to create this manuscript is provided in an OSF repository at https://osf.io/h5e2q/.
-
-
-Correspondence concerning this article should be addressed to Daniel Lakens, ATLAS 9.402, 5600 MB, Eindhoven, The Netherlands. E-mail: D.Lakens@tue.nl}
 \keywords{hypothesis testing, Type 1 error, Type 2 error, statistical power\newline\indent Word count: 4890 words}
-\usepackage{lineno}
+\usepackage{dblfloatfix}
 
-\linenumbers
+
 \usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{heuristica}
 \ifxetex
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
   \setmainlanguage[]{english}
 \else
-  \usepackage[shorthands=off,main=english]{babel}
+  \usepackage[main=english]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \fi
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
@@ -153,39 +169,52 @@ Correspondence concerning this article should be addressed to Daniel Lakens, ATL
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{Justify Your Alpha: A Practical Guide}
-
+\author{Maximilian Maier\textsuperscript{1} \& Daniel Lakens\textsuperscript{2}}
 \date{}
+
+
+\note{\textcolor{gray}{This unpublished manuscript is submitted for peer review}}
+
+\authornote{
+
+Correspondence concerning this article should be addressed to Daniel Lakens, ATLAS 9.402, 5600 MB, Eindhoven, The Netherlands. E-mail: \href{mailto:D.Lakens@tue.nl}{\nolinkurl{D.Lakens@tue.nl}}
+
+}
+
+\affiliation{\vspace{0.5cm}\textsuperscript{1} University of Amsterdam, The Netherlands\\\textsuperscript{2} Eindhoven University of Technology, The Netherlands}
 
 \abstract{
 The default use of an alpha level of 0.05 is sub-optimal for two reasons. First, decisions based on data can be made more efficiently by choosing an alpha level that minimizes the combined Type 1 and Type 2 error rate. Second, in studies with very high statistical power \emph{p}-values lower than the alpha level can actually be support for the null hypothesis, instead of for the alternative hypothesis. Because it is difficult to abandon a bad practice without providing an alternative, this manuscript explains two approaches that can be used to justify your alpha. The first approach is based on the idea to either minimize or balance Type 1 and Type 2 error rates. The second approach lowers the alpha level as a function of the sample size. Software is provided to perform the required calculations. Both approaches have their limitations (e.g., the challenge of specifying relative costs and priors, or the slightly arbitrary nature of how the alpha level should decrease as the sample size increases) but they nevertheless provide a clear improvement compared to current practices. The use of alpha levels that have a better justification should improve statistical inferences and increase the efficiency of scientific research.
 }
 
+
+
 \begin{document}
 \maketitle
 
-Researchers often rely on data to decide how to act. In a Neyman-Pearson approach to hypothesis testing (Neyman \& Pearson, 1933) studies are designed such that erroneous decisions that determine how we act are controlled in the long run at some desired maximum level. If resources were infinite we could collect so much data that the chance of making a wrong decision is incredibly small. But resources are often limited, which means that researchers need to decide how to choose the rate at which they are willing to make errors. After data is collected researchers can incorrectly act as if there is an effect when there is no true effect (a Type 1 error) or incorrectly act as if there is no effect when there is a true effect (a Type 2 error). For any fixed sample size and true effect size a reduction in the Type 1 error rate will increase the Type 2 error rate and vice versa.
+Researchers often rely on data to decide how to act. In a Neyman-Pearson approach to hypothesis testing (Neyman \& Pearson, 1933) studies are designed such that erroneous decisions that determine how we act are controlled in the long run at some desired maximum level. If resources were infinite we could collect enough data to make the chance of a wrong decision incredibly small. But resources are limited, which means that researchers need to decide how to choose the rate at which they are willing to make errors. After data is collected researchers can incorrectly act as if there is an effect when there is no true effect (a Type 1 error) or incorrectly act as if there is no effect when there is a true effect (a Type 2 error). Given the same amount of data, a reduction in the Type 1 error rate will increase the Type 2 error rate (and vice versa) .
 
-The question how error rates should be set in any study requires careful consideration of the relative costs of a Type 1 error or a Type 2 error. Regrettably researchers rarely provide such a justification, and predominantly use a Type 1 error rate of 5\%. One reason researchers rely on norms instead of rationally chosen error rates is the absence of explanations how to justify a different alpha level than the normative use of 0.05. This article explains why error rates need to be justified, and provides two practical guidelines that can be used to justify the alpha level by balancing or minimizing error rates, or justify the alpha level by lowering it as a function of the sample size.
+The question how error rates should be set in any study requires careful consideration of the relative costs of a Type 1 error or a Type 2 error. Regrettably researchers rarely provide such a justification, and predominantly use a Type 1 error rate of 5\%. In the past the strong convention to use a 5\% alpha level might have functioned as a de facto prespecification of the alpha level, which needs to be before the data is analyzed (Tunç, Tunç, \& Lakens, 2021). Nowadays researchers can transparently preregister a statistical analysis plan in an online repository, which makes it possible to specify more appropriate but less conventional alpha levels. Even though it is possible to preregister non-conventional alpha levels, there is relatively little guidance on how to choose an alpha level for a study. This article explains why error rates need to be justified, and provides two practical approaches that can be used to justify the alpha level. In the first approach, the Type I and Type II error rates are balanced or minimized, and in the second approach the alpha level is lowered as a function of the sample size.
 
 \hypertarget{why-do-we-use-a-5-alpha-level-and-80-power}{%
 \section{Why do we use a 5\% alpha level and 80\% power?}\label{why-do-we-use-a-5-alpha-level-and-80-power}}
 
-As a young scholar we might naively assume that when all researchers do something, there must be a good reason for such an established practice. An important step towards maturity as a scholar is the realization that this is not the case. Neither Fisher nor Neyman, two statistical giants largely responsible for the widespread reliance on hypothesis tests in the social sciences, recommended the universal use of any specific threshold. Fisher (1935) writes: ``It is open to the experimenter to be more or less exacting in respect of the smallness of the probability he would require before he would be willing to admit that his observations have demonstrated a positive result.'' Similarly, Neyman and Pearson (1933) write: ``From the point of view of mathematical theory all that we can do is to show how the risk of the errors may be controlled and minimized. The use of these statistical tools in any given case, in determining just how the balance should be struck, must be left to the investigator.''
+We might naively assume that when all researchers do something, there must be a good reason for such an established practice. An important step towards maturity as a scholar is the realization that this is not the case. Neither Fisher nor Neyman, two statistical giants largely responsible for the widespread reliance on hypothesis tests in the social sciences, recommended the universal use of any specific threshold. Fisher (1935) writes: ``It is open to the experimenter to be more or less exacting in respect of the smallness of the probability he would require before he would be willing to admit that his observations have demonstrated a positive result.'' Similarly, Neyman and Pearson (1933) write: ``From the point of view of mathematical theory all that we can do is to show how the risk of the errors may be controlled and minimized. The use of these statistical tools in any given case, in determining just how the balance should be struck, must be left to the investigator.''
 
-Even though in theory alpha levels should be justified, in practice researchers tend to imitate others. Fisher writes in 1926: ``Personally, the writer prefers to set a low standard of significance at the 5 per cent point, and ignore entirely all results which fail to reach this level.'' This sentence is preceded by the statement ``If one in twenty does not seem high enough odds, we may, if we prefer it, draw the line at one in fifty (the 2 percent point), or one in a hundred (the 1 percent point).'' Indeed, in his examples Fisher often uses an alpha of 0.01. Nevertheless, researchers seem to have copied the value Fisher preferred, instead of his more important take-home message that the significance level should be set by the experimenter. The default use of an alpha level of 0.05 seems to originate from the early work of Gosset on the \emph{t}-distribution (Cowles \& Davis, 1982), who believed that a difference of two standard deviations (a z-score of 2) was sufficiently rare.
+Even though in \emph{theory} alpha levels should be justified, in \emph{practice} researchers tend to imitate others. Fisher writes in 1926: ``Personally, the writer prefers to set a low standard of significance at the 5 per cent point, and ignore entirely all results which fail to reach this level.'' This sentence is preceded by the statement ``If one in twenty does not seem high enough odds, we may, if we prefer it, draw the line at one in fifty (the 2 percent point), or one in a hundred (the 1 percent point).'' Indeed, in his examples Fisher often uses an alpha of 0.01. Nevertheless, researchers seem to have copied the value Fisher preferred, instead of his more important take-home message that the significance level should be set by the experimenter. The default use of an alpha level of 0.05 seems to originate from the early work of Gosset on the \emph{t}-distribution (Cowles \& Davis, 1982; Kennedy-Shaffer, 2019), who believed that a difference of two standard deviations (a z-score of 2) was sufficiently rare.
 
 The default use of 80\% power (or a 20\% Type 2, or beta (b) error) is similarly based on personal preferences by Cohen (1988), who writes: ``It is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used. This means that beta is set at .20. This arbitrary but reasonable value is offered for several reasons (Cohen, 1965, pp.~98-99). The chief among them takes into consideration the implicit convention for alpha of .05. The beta of .20 is chosen with the idea that the general relative seriousness of these two kinds of errors is of the order of .20/.05, i.e., that Type I errors are of the order of four times as serious as Type II errors. This .80 desired power convention is offered with the hope that it will be ignored whenever an investigator can find a basis in his substantive concerns in his specific research investigation to choose a value ad hoc.''
 
 We see that conventions are built on conventions: the norm to aim for 80\% power is built on the norm to set the alpha level at 5\%. However, the real lesson Cohen was teaching us is to determine the relative seriousness of Type 1 and Type 2 errors, and to balance both types of errors when a study is designed. If a Type 1 error is considered to be four times as serious as a Type 2 error, the \emph{weighted} error rates in the study are balanced. Instead of imitating the values chosen by Cohen, researchers should aim to imitate the approach he used to justify error rates.
 
-\hypertarget{why-error-rates-should-be-justified}{%
-\subsection{Why error rates should be justified}\label{why-error-rates-should-be-justified}}
+\hypertarget{justifying-the-alpha-level}{%
+\subsection{Justifying the alpha level}\label{justifying-the-alpha-level}}
 
 In 1957 Neyman wrote: ``it appears desirable to determine the level of significance in accordance with quite a few circumstances that vary from one particular problem to the next.'' The mindless application of null hypothesis significance tests, including setting the alpha level at 5\% for all tests, has been criticized for more than half a century (Bakan, 1966; Gigerenzer, 2018). But it is difficult to abandon a mediocre research practice without an alternative.
 
-There are two main reasons to abandon the universal use of a 5\% alpha level. The first reason to carefully choose an alpha level is that decision making becomes more efficient. If researchers use hypothesis tests to choose how to act while balancing error rates it is typically possible to make decisions more efficiently by setting the alpha level at a different value than 0.05. If we aim to either minimize or balance Type 1 and Type 2 error rates for a given sample size and effect size, the alpha level should be set not based on convention, but by weighting the relative costs of both types of errors.
+There are two main reasons to abandon the universal use of a 5\% alpha level. The first reason to carefully choose an alpha level is that decision making becomes more efficient. If researchers use hypothesis tests to make dichotomous decisions from a methodological falsificationist approach to statistical inferences (Tunç, Tunç, \& Lakens, 2021), it is typically possible to make decisions more efficiently, where the combined Type 1 and Type 2 error rate is minimized, by setting the alpha level at a different value than 0.05. If we aim to either minimize or balance Type 1 and Type 2 error rates for a given sample size and effect size, the alpha level should be set not based on convention, but by weighting the relative cost of both types of errors.
 
-The second reasons is that as the statistical power increases, some \emph{p}-values below 0.05 (e.g., \emph{p} = 0.04) can be more likely when there is \emph{no} effect than when there \emph{is} an effect. This is known as Lindley's paradox (Cousins, 2017; Lindley, 1957). The distribution of \emph{p}-values is a function of the statistical power (Cumming, 2008), and the higher the power, the more right-skewed the distribution becomes (i.e.~the more low \emph{p}-values are observed). When there is no true effect \emph{p}-values are uniformly distributed, and 1\% of observed \emph{p}-values fall between 0.04 and 0.05. When the statistical power is extremely high, not only will most \emph{p}-values fall below 0.05, most will also fall below 0.01. In Figure \ref{fig:p-plot} we see that with high power very low \emph{p}-values are more likely to be observed when there \emph{is} an effect than when there is \emph{no} effect (e.g., the black curve representing \emph{p}-values when the alternative is true falls above the dashed horizontal line for a \emph{p}-value of 0.01). But observing a \emph{p}-value of 0.04 is more likely when the null hypothesis is true than when the alternative hypothesis is true and we have very high power (the horizontal dashed line falls above the black curve for \emph{p}-values larger than \textasciitilde0.025).
+The second reason is that as the statistical power increases, some \emph{p}-values below 0.05 (e.g., \emph{p} = 0.04) can be more likely when there is \emph{no} effect than when there \emph{is} an effect. This is known as Lindley's paradox (Cousins, 2017; Lindley, 1957). The distribution of \emph{p}-values is a function of the statistical power (Cumming, 2008), and the higher the power, the more right-skewed the distribution becomes (i.e.~the more low \emph{p}-values are observed). When there is no true effect \emph{p}-values are uniformly distributed, and 1\% of observed \emph{p}-values fall between 0.04 and 0.05. When the statistical power is extremely high, not only will most \emph{p}-values fall below 0.05, most will also fall below 0.01. In Figure \ref{fig:p-plot} we see that with high power very low \emph{p}-values are more likely to be observed when there \emph{is} an effect than when there is \emph{no} effect (e.g., the black curve representing \emph{p}-values when the alternative is true falls above the dashed horizontal line for a \emph{p}-value of 0.01). But observing a \emph{p}-value of 0.04 is more likely when the null hypothesis (H0) is true than when the alternative hypothesis (H1) is true and we have very high power (the horizontal dashed line falls above the black curve for \emph{p}-values larger than \textasciitilde0.025).
 
 \begin{figure}
 \centering
@@ -193,16 +222,20 @@ The second reasons is that as the statistical power increases, some \emph{p}-val
 \caption{\label{fig:p-plot}\emph{P}-value distributions for a two-sided independent \emph{t}-test with N = 150 and d = 0.5 (black curve) or d = 0 (horizontal dashed line) which illustrates how \emph{p}-values just below 0.05 can be more likely when there is no effect than when there is an effect.}
 \end{figure}
 
-Researchers often want to interpret a significant test result as `support' for the alternative hypothesis. If so, it makes sense to choose the alpha level such that when a significant \emph{p}-value is observed, the \emph{p}-value is actually more likely when the alternative hypothesis is true than when the null hypothesis is true. This means that when statistical power is very high (e.g., the sample size is very large), the alpha level should be reduced. For example, if the alpha level in Figure \ref{fig:p-plot} is lowered to 0.02 then the alternative hypothesis is more likely than the null hypothesis for all significant \emph{p}-values that would be observed.
+Researchers often want to interpret a significant test result as `support' for the alternative hypothesis. In other words, in addition to controlling the \emph{error rate}, researchers might be interested in interpreting the \emph{relative evidence} in the data for null hypothesis over the alternative hypothesis. If so, it makes sense to choose the alpha level such that when a significant \emph{p}-value is observed, the \emph{p}-value is actually more likely when the alternative hypothesis is true than when the null hypothesis is true. This means that when statistical power is very high (e.g., the sample size is very large), the alpha level should be reduced. For example, if the alpha level in Figure \ref{fig:p-plot} is lowered to 0.02 then the alternative hypothesis is more likely than the null hypothesis for all significant \emph{p}-values that would be observed. This approach to justifying the alpha level can be seen as a frequentist/Bayesian compromise (Good, 1992). The error rate is controlled, but the alpha level is also set at a value that guarantees that whenever we reject the null hypothesis, the data is more likely under the alternative hypothesis, than under the null.
 
 \hypertarget{minimizing-or-balancing-type-1-and-type-2-error-rates}{%
 \subsection{Minimizing or Balancing Type 1 and Type 2 Error Rates}\label{minimizing-or-balancing-type-1-and-type-2-error-rates}}
 
-If both Type 1 as Type 2 errors are costly, then it makes sense to optimally reduce both errors as you design studies. This would make decision making overall most efficient. Researchers can choose to design a study with a statistical power and alpha level that minimize the \emph{combined error rate}. For example, assuming H0 and H1 are a-priori equally probable, with a 5\% alpha level and a statistical power of 80\% the combined error rate is (5 + 20)/2 = 12.5\%. If the statistical power is 99\% and the alpha is 5\% the combined error rate is (1 + 5)/2 = 3\%. As shown below, this approach can be extended to incorporate different prior probabilities of H0 and H1. Mudge, Baker, Edge, and Houlahan (2012) show that by choosing an alpha level based on the relative weight of Type 1 errors and Type 2 errors, and assuming beliefs about the prior probability that H0 and H1 are correct, decisions can be made more efficiently compared to the default use of an alpha level of 0.05.
+If both Type 1 as Type 2 errors are costly, then it makes sense to optimally reduce both errors as you design studies. This leads to studies where you make decisions most efficiently. Researchers can choose to design a study with a statistical power and alpha level that minimizes the \emph{combined error rate}. For example, assuming H0 and H1 are a-priori equally probable (the prior probability for both is 0.5). With a Type 1 error rate of 0.05 and statistical power of 0.80 the combined error rate is (0.5×0.05 + 0.5×0.20) = 0.125. We could have chosen to set the alpha level in this study to 0.1. If the Type 1 error rate is 0.1, the statistical power (given the same sample size) would be 0.88, which means the combined error rate is (0.5×0.1 + 0.5×0.12) = 0.11. In other words, increasing the Type 1 error rate from 0.05 to 0.1 reduced the Type 1 error rate from 0.2 to 0.12, and the combined error rate from 0.125 to 0.11. In the latter scenario, our total probability of making an erroneous decision has become 0.015 smaller. As shown below, this approach can be extended to incorporate scenarios where the prior probability of H0 and H1 differ. Mudge, Baker, Edge, and Houlahan (2012) show that by choosing an alpha level based on the relative weight of Type 1 errors and Type 2 errors, and assuming beliefs about the prior probability that H0 and H1 are correct, decisions can be made more efficiently than when the default alpha level of 0.05 is used.
 
-Winer (1962) writes: ``The frequent use of the .05 and .01 levels of significance is a matter of convention having little scientific or logical basis. When the power of tests is likely to be low under these levels of significance, and when Type 1 and Type 2 errors are of approximately equal importance, the .30 and .20 levels of significance may be more appropriate than the .05 and .01 levels.'' The reasoning here is that a design that has 70\% power for the smallest effect size of interest would not balance the Type 1 and Type 2 error rates in a sensible manner. Similarly, in huge datasets it might be possible to achieve very high levels of power for all effect sizes that are still considered meaningful. If such a study has 99\% power for effect sizes of interest, and thus a 1\% Type 2 error rate, but uses a 5\% alpha level, it also suffers from a lack of balance. A common example of this latter scenario is the default use of a 5\% alpha level in meta-analyses, which often have extremely high power for any effect size that would be considered meaningful, and where it seems sensible to lower the alpha level considerably.
+Winer (1962) writes: ``The frequent use of the .05 and .01 levels of significance is a matter of convention having little scientific or logical basis. When the power of tests is likely to be low under these levels of significance, and when Type 1 and Type 2 errors are of approximately equal importance, the .30 and .20 levels of significance may be more appropriate than the .05 and .01 levels.'' The reasoning here is that a design that has 70\% power for the smallest effect size of interest would not balance the Type 1 and Type 2 error rates in a sensible manner. Similarly, in huge datasets it might be possible to achieve very high levels of power for all effect sizes that are still considered meaningful. If such a study has 99\% power for effect sizes of interest, and thus a 1\% Type 2 error rate, but uses a 5\% alpha level, it also suffers from a lack of balance. This latter scenario is quite common in meta-analyses, where researchers by default use a 0.05 alpha level, while the meta-analysis typically have much higher power than 0.95 for all effect sizes of interest. In such cases, it seems sensible to lower the alpha level considerably.
 
-Researchers can decide to either balance Type 1 and Type 2 error rates (e.g., setting both at 5\%), or minimize error rates. For any given sample size and effect size of interest there is an alpha level that minimizes the combined error rates. Because the chosen alpha level also influences the statistical power, and the Type 2 error rate is therefore dependent upon the Type 1 error rate, minimizing or balancing error rates requires an iterative procedure. Imagine researchers plan to perform a study which will be analyzed with an independent two-sided \emph{t}-test. They initially plan to collect 50 participants per condition, and set their smallest effect size of interest to d = 0.5. They think a Type 1 error is just as severe as a Type 2 error, and believe H0 is just as likely to be true as H1. The combined error rate is minimized when they set alpha to 0.13 (see Figure \ref{fig:weight-plot}, dotted line), which will give the study a Type 2 error rate of beta = 0.166 to detect effects of d = 0.5. The combined error rate is 0.148, while it would have been 0.177 if the alpha level was set at 5\%\footnote{For the same scenario, balanced error rates are alpha = 0.149 and beta = 0.149.}. Instead of choosing an example that is more extreme, I think it is important to point out that a better justified alpha level not necessarily means a hugely different alpha level. The absolute benefits are more noticeable for study designs where Type 2 error rates are high when a 5\% alpha level would be used, or where the Type 2 error is very small and the alpha level can be reduced from 0.05. Similarly, Figure \ref{fig:weight-plot} shows that if one were to use an alpha level of 0.005 following recommendations of Benjamin et al. (2018) when collecting a sample size of 100 per group to detect an effect of d = 0.5, the study would be much less efficient than it could be if a higher alpha level is chosen. The more important take-home message is that, perhaps counter-intuitively, decision making is sometimes slightly more efficient after \emph{increasing} the alpha level from the default of 0.05.
+Researchers can decide to either balance Type 1 and Type 2 error rates (e.g., setting both at 5\%), or minimize the combined error rate. For any given sample size and effect size of interest there is an alpha level that minimizes the combined error rates. Because the chosen alpha level also influences the statistical power, and the Type 2 error rate is therefore dependent upon the Type 1 error rate, minimizing or balancing error rates requires an iterative procedure.
+
+As an example, imagine researchers plan to perform a study which will be analyzed with an independent two-sided \emph{t}-test. They initially plan to collect 50 participants per condition, and set their smallest effect size of interest to Cohen's d = 0.5. They think a Type 1 error is just as costly as a Type 2 error, and believe H0 is just as likely to be true as H1. The combined error rate is minimized when they set alpha to 0.13 (see Figure \ref{fig:weight-plot}, dotted line), which will give the study a Type 2 error rate of beta = 0.166 to detect effects of d = 0.5. The combined error rate is 0.148, while it would have been 0.177 if the alpha level was set at 5\%\footnote{For the same scenario, balanced error rates are alpha = 0.149 and beta = 0.149.}.
+
+Instead of choosing an example that is more extreme, I think it is important to point out that a better justified alpha level not necessarily means a hugely different alpha level. The absolute benefits are more noticeable for study designs where Type 2 error rates are high when a 5\% alpha level would be used, or where the Type 2 error is very small and the alpha level can be reduced from 0.05. Similarly, Figure \ref{fig:weight-plot} shows that if one were to use an alpha level of 0.005 following recommendations of Benjamin et al. (2018) when collecting a sample size of 100 per group to detect an effect of d = 0.5, the study would be much less efficient than it could be if a higher alpha level is chosen. The more important take-home message is that, perhaps counter-intuitively, decision making is sometimes slightly more efficient after \emph{increasing} the alpha level from the default of 0.05.
 
 \begin{figure}
 \centering
@@ -213,7 +246,7 @@ Researchers can decide to either balance Type 1 and Type 2 error rates (e.g., se
 \hypertarget{weighing-the-relative-cost-of-errors}{%
 \subsubsection{Weighing the Relative Cost of Errors}\label{weighing-the-relative-cost-of-errors}}
 
-Cohen (1988) considered a study design with a 5\% Type 1 error rate and a 20\% Type 2 error rate balanced. The reason for this was that instead of weighing both types of errors equally, he felt ``Type I errors are of the order of four times as serious as Type II errors.'' To determine the relative costs of Type 1 and Type 2 errors researchers should perform a cost-benefit analysis. As an example from another discipline, (\textbf{field\_minimizing\_2004?}) quantify the relative costs of Type 1 errors when testing whether native species in Australia are declining. They come to the conclusion that when it comes to the Koala population, given its great economic value, a cost-benefit analysis indicates the alpha level should be set to 1. In other words, one should always act as if the population is declining, because the relative cost of a Type 2 error compared to a Type 1 error is extremely large.
+Cohen (1988) considered a study design with a 5\% Type 1 error rate and a 20\% Type 2 error rate balanced. The reason for this was that instead of weighing both types of errors equally, he felt ``Type I errors are of the order of four times as serious as Type II errors.'' To determine the relative costs of Type 1 and Type 2 errors researchers should perform a cost-benefit analysis. As an example from another discipline, Field, Tyre, Jonzén, Rhodes, and Possingham (2004) quantify the relative costs of Type 1 errors when testing whether native species in Australia are declining. They come to the conclusion that when it comes to the Koala population, given its great economic value, a cost-benefit analysis indicates the alpha level should be set to 1. In other words, one should always act as if the population is declining, because the relative cost of a Type 2 error compared to a Type 1 error is extremely large.
 
 Although it can be difficult to formally quantify all factors that determine the costs of Type 1 and Type 2 errors, there is no reason to let the perfect be the enemy of the good. In research questions where there are no direct applications of the research findings, relative costs might be largely subjective. If you have a research strategy where you always follow up on an initial study testing a theoretical prediction with a replication and extension study, and want to innovate, you might want to weigh a Type 2 error more strongly than a Type 1 error. If you are relatively sure policies will be changed based on the outcome of your single study, or it is unlikely many researchers will have the resources to replicate your study, a Type 1 error rate might be weighed more strongly than a Type 2 error. There are no right or wrong answers, but you need to think through this question when you design a study.
 
@@ -261,9 +294,9 @@ Let us illustrate this using the example of researchers studying an effect of \e
 
 Sometimes a researcher might feel it is too challenging to specify relative costs, prior probabilities, and the effect size of interest, and be tempted to fall back to the use of an alpha level of 0.05. For such cases an approach exists where the alpha level is lowered as a function off the sample size. The need to do so is discussed extensively by Leamer (1978). He writes ``The rule of thumb quite popular now, that is, setting the significance level arbitrarily to .05, is shown to be deficient in the sense that from every reasonable viewpoint the significance level should be a decreasing function of sample size.'' This was already recognized by Harold Jeffreys (1939), who discusses ways to set the alpha level in the Neyman-Pearson approach to statistics: ``We should therefore get the best result, with any distribution of alpha, by some form that makes the ratio of the critical value to the standard error increase with n.~It appears then that whatever the distribution may be, the use of a fixed \emph{P} limit cannot be the one that will make the smallest number of mistakes.'' Good (1992) notes: ``we have empirical evidence that sensible \emph{P} values are related to weights of evidence and, therefore, that \emph{P} values are not entirely without merit. The real objection to \emph{P} values is not that they usually are utter nonsense, but rather that they can be highly misleading, especially if the value of N is not also taken into account and is large.''
 
-To understand these recommendations it is important to distinguish between statistical inferences based on error control and inferences based on likelihoods. An alpha level of 5\% will limit incorrect decisions to a desired maximum (in the long run, and when all test assumptions are met). However, from a likelihood perspective it is possible that the observed data is much more likely when the null hypothesis is true, than when the alternative hypothesis is true, even when the observed \emph{p}-value is smaller than 0.05. This situation, known as Lindley's paradox, is visualized in Figure \ref{fig:p-plot}. It emerges because the critical value of a frequentist test approaches a limit as the sample size increases (e.g., \emph{t} = 1.96 for a two-sided \emph{t}-test). In Bayesian statistics the same Bayes factor requires a larger test statistic when the sample size is larger (see Jeffrey N. Rouder, Speckman, Sun, Morey, and Iverson (2009) and Zellner (1971)).
+To understand these recommendations it is important to distinguish between statistical inferences based on error control and inferences based on likelihoods. An alpha level of 5\% will limit incorrect decisions to a desired maximum (in the long run, and when all test assumptions are met). However, from a likelihood perspective it is possible that the observed data is much more likely when the null hypothesis is true, than when the alternative hypothesis is true, even when the observed \emph{p}-value is smaller than 0.05. This situation, known as Lindley's paradox, is visualized in Figure \ref{fig:p-plot}. It emerges because the critical value of a frequentist test approaches a limit as the sample size increases (e.g., \emph{t} = 1.96 for a two-sided \emph{t}-test). In Bayesian statistics the same Bayes factor requires a larger test statistic when the sample size is larger (see Jeffrey N. Rouder, Speckman, Sun, Morey, and Iverson (2009a) and Zellner (1971)).
 
-To prevent Lindley's paradox when using frequentist statistics one would need to adjust the alpha level in a way that the likelihood ratio (also called the Bayes factor) at the critical test statistic is always one. With such an alpha level, a significant \emph{p}-value will always be as least as likely if the alternative is true than if the null is true, successfully avoiding the Lindley paradox. Faulkenberry (2019) and Jeffrey N. Rouder, Speckman, Sun, Morey, and Iverson (2009) developed Bayes factors for \emph{t}-tests and ANOVAs which can calculate the Bayes factor from the test statistic and degrees of freedom.
+To prevent Lindley's paradox when using frequentist statistics one would need to adjust the alpha level in a way that the likelihood ratio (also called the Bayes factor) at the critical test statistic is always one. With such an alpha level, a significant \emph{p}-value will always be as least as likely if the alternative is true than if the null is true, successfully avoiding the Lindley paradox. Faulkenberry (2019) and Jeffrey N. Rouder, Speckman, Sun, Morey, and Iverson (2009b) developed Bayes factors for \emph{t}-tests and ANOVAs which can calculate the Bayes factor from the test statistic and degrees of freedom.
 Based on these papers we developed a shiny app (link) to reduce the alpha level proportional to the sample size and avoid Lindley's paradox. However, it can be considered evenly paradoxical to reject the null hypothesis even so the evidence for the alternative from a Bayesian point of view is only weak as the case with a likelihood ratio of one. To reliably avoid false positives one would need a tool in which a significant \emph{p}-value corresponds to moderate or strong evidence from a likelihoodist or Bayesian perspective. As a rule of thumb, if the data is 3 to 10 times more likely under the alternative than under the null this is considered moderate evidence, and data more than 10 times more likely under the alternative is considered strong evidence (H. Jeffreys, 1939, Appendix 1; Lee \& Wagenmakers, 2013, p. 105). Therefore, we extended the shiny app to also allow researchers to adjust the alpha level in a way that a significant \emph{p}-value will always provide moderate or strong evidence against the null hypothesis.
 
 Our calculations are based on a unit information prior.\footnote{For t-tests the shiny app also allows to use the more common Cauchy prior.} This prior is relatively wide which sometimes results in overstated evidence for H0. However, while it is usually wise to use more informed priors (e.g., McElreath, 2020), we believe that to avoid the Lindley paradox a wide prior is the more conservative choice. In other words, it will prevent overstating the evidence for H1 and consequently be more likely to use an alpha level that is too low, rather than an alpha level that is too high. In addition, in contrast to previous approaches that aimed to calculate a Bayes factor for every \emph{p}-value (Colquhoun, 2017; e.g., D. Colquhoun, 2019) our application does not require researchers to specify the effect size under the alternative. Although the unit information prior is still an expectation for H1, not needing to specify the prior directly will likely increase the adoption among empirical researchers who sometimes find it difficult to specify a smallest effect size of interest or an expected effect size.
@@ -303,8 +336,9 @@ Because of the strong overreliance on a 5\% error rate when designing studies, w
 \hypertarget{references}{%
 \section{References}\label{references}}
 
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
+\begingroup
+
+\interlinepenalty = 10000
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
@@ -313,9 +347,6 @@ Albers, C., \& Lakens, D. (2018). When power analyses based on pilot data are bi
 
 \leavevmode\hypertarget{ref-bakan_test_1966}{}%
 Bakan, D. (1966). The test of significance in psychological research. \emph{Psychological Bulletin}, \emph{66}(6), 423--437.
-
-\leavevmode\hypertarget{ref-bem2011feeling}{}%
-Bem, D. J. (2011). Feeling the future: Experimental evidence for anomalous retroactive influences on cognition and affect. \emph{Journal of Personality and Social Psychology}, \emph{100}(3), 407.
 
 \leavevmode\hypertarget{ref-bem2011feeling}{}%
 Bem, D. J. (2011). Feeling the future: Experimental evidence for anomalous retroactive influences on cognition and affect. \emph{Journal of Personality and Social Psychology}, \emph{100}(3), 407.
@@ -344,6 +375,9 @@ Cumming, G. (2008). Replication and {\emph{p}} {Intervals}: {\emph{P}} {Values P
 \leavevmode\hypertarget{ref-faulkenberry2019estimating}{}%
 Faulkenberry, T. J. (2019). Estimating evidential value from analysis of variance summaries: A comment on ly et al.(2018). \emph{Advances in Methods and Practices in Psychological Science}, \emph{2}(4), 406--409.
 
+\leavevmode\hypertarget{ref-field_minimizing_2004}{}%
+Field, S. A., Tyre, A. J., Jonzén, N., Rhodes, J. R., \& Possingham, H. P. (2004). Minimizing the cost of environmental management decisions by optimizing statistical thresholds. \emph{Ecology Letters}, \emph{7}(8), 669--675.
+
 \leavevmode\hypertarget{ref-fisher_design_1935}{}%
 Fisher, R. A. (1935). \emph{The design of experiments}. {Oliver And Boyd; Edinburgh; London}.
 
@@ -353,14 +387,17 @@ Galak, J., LeBoeuf, R. A., Nelson, L. D., \& Simmons, J. P. (2012). Correcting t
 \leavevmode\hypertarget{ref-gigerenzer_statistical_2018}{}%
 Gigerenzer, G. (2018). Statistical {Rituals}: {The Replication Delusion} and {How We Got There}. \emph{Advances in Methods and Practices in Psychological Science}, 2515245918771329. \url{https://doi.org/10.1177/2515245918771329}
 
-\leavevmode\hypertarget{ref-good_bayesux2fnon-bayes_1992}{}%
-Good, I. J. (1992). The {Bayes}/{Non}-{Bayes Compromise}: {A Brief Review}. \emph{Journal of the American Statistical Association}, \emph{87}(419), 597. \url{https://doi.org/10.2307/2290192}
+\leavevmode\hypertarget{ref-good_bayes-non-bayes_1992}{}%
+Good, I. J. (1992). The {Bayes}-{Non}-{Bayes Compromise}: {A Brief Review}. \emph{Journal of the American Statistical Association}, \emph{87}(419), 597. \url{https://doi.org/10.2307/2290192}
 
 \leavevmode\hypertarget{ref-jeffreys_theory_1939}{}%
 Jeffreys, Harold. (1939). \emph{Theory of probability} (1st ed). {Oxford {[}Oxfordshire{]} : New York}: {Clarendon Press ; Oxford University Press}.
 
 \leavevmode\hypertarget{ref-Jeffreys1939}{}%
 Jeffreys, H. (1939). \emph{Theory of probability} (1st ed.). Oxford, UK: Oxford University Press.
+
+\leavevmode\hypertarget{ref-kennedy-shaffer_before_2019}{}%
+Kennedy-Shaffer, L. (2019). Before p {\(<\)} 0.05 to {Beyond} p {\(<\)} 0.05: {Using History} to {Contextualize} p-{Values} and {Significance Testing}. \emph{The American Statistician}, \emph{73}(sup1), 82--90. \url{https://doi.org/10.1080/00031305.2018.1537891}
 
 \leavevmode\hypertarget{ref-leamer_specification_1978}{}%
 Leamer, E. E. (1978). \emph{Specification {Searches}: {Ad Hoc Inference} with {Nonexperimental Data}} (1 edition). {New York usw.}: {Wiley}.
@@ -387,16 +424,19 @@ Neyman, J., \& Pearson, E. S. (1933). On the {Problem} of the {Most Efficient Te
 Ritchie, S. J., Wiseman, R., \& French, C. C. (2012). Failing the future: {T}hree unsuccessful attempts to replicate {B}em's `{R}etroactive facilitation of recall'effect. \emph{PloS One}, \emph{7}(3), e33423. Retrieved from \url{https://doi.org/10.1371/journal.pone.0033423}
 
 \leavevmode\hypertarget{ref-rouder_bayesian_2009}{}%
-Rouder, Jeffrey N., Speckman, P. L., Sun, D., Morey, R. D., \& Iverson, G. (2009). Bayesian t tests for accepting and rejecting the null hypothesis. \emph{Psychonomic Bulletin \& Review}, \emph{16}(2), 225--237. \url{https://doi.org/10.3758/PBR.16.2.225}
+Rouder, Jeffrey N., Speckman, P. L., Sun, D., Morey, R. D., \& Iverson, G. (2009a). Bayesian t tests for accepting and rejecting the null hypothesis. \emph{Psychonomic Bulletin \& Review}, \emph{16}(2), 225--237. \url{https://doi.org/10.3758/PBR.16.2.225}
 
 \leavevmode\hypertarget{ref-rouder2009bayesian}{}%
-Rouder, Jeffrey N., Speckman, P. L., Sun, D., Morey, R. D., \& Iverson, G. (2009). Bayesian t tests for accepting and rejecting the null hypothesis. \emph{Psychonomic Bulletin \& Review}, \emph{16}(2), 225--237.
+Rouder, Jeffrey N., Speckman, P. L., Sun, D., Morey, R. D., \& Iverson, G. (2009b). Bayesian t tests for accepting and rejecting the null hypothesis. \emph{Psychonomic Bulletin \& Review}, \emph{16}(2), 225--237.
 
 \leavevmode\hypertarget{ref-skipper_sacredness_1967}{}%
 Skipper, J. K., Guenther, A. L., \& Nass, G. (1967). The {Sacredness} of .05: {A Note} concerning the {Uses} of {Statistical Levels} of {Significance} in {Social Science}. \emph{The American Sociologist}, \emph{2}(1), 16--18.
 
+\leavevmode\hypertarget{ref-tunc_epistemic_2021}{}%
+Tunç, D. U., Tunç, M. N., \& Lakens, D. (2021). \emph{The {Epistemic} and {Pragmatic} {Function} of {Dichotomous} {Claims} {Based} on {Statistical} {Hypothesis} {Tests}}. PsyArXiv. \url{https://doi.org/10.31234/osf.io/af9by}
+
 \leavevmode\hypertarget{ref-wagenmakers2011psychologists}{}%
-Wagenmakers, E.-J., Wetzels, R., Borsboom, D., \& Van Der Maas, H. L. (2011). Why psychologists must change the way they analyze their data: The case of {P}si: {C}omment on {B}em (2011). Retrieved from \url{http://dx.doi.org/10.2139/ssrn.2001721}
+Wagenmakers, E.-J., Wetzels, R., Borsboom, D., \& Van Der Maas, H. L. (2011). \emph{Why psychologists must change the way they analyze their data: The case of {P}si: {C}omment on {B}em (2011).} Retrieved from \url{http://dx.doi.org/10.2139/ssrn.2001721}
 
 \leavevmode\hypertarget{ref-winer_statistical_1962}{}%
 Winer, B. J. (1962). \emph{Statistical principles in experimental design}. {New York : McGraw-Hill}.
@@ -405,5 +445,8 @@ Winer, B. J. (1962). \emph{Statistical principles in experimental design}. {New 
 Zellner, A. (1971). \emph{An introduction to {Bayesian} inference in econometrics}. {New York}: {Wiley}.
 
 \end{CSLReferences}
+
+\endgroup
+
 
 \end{document}
