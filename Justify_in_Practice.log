@@ -1,0 +1,1145 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.5.4)  19 MAY 2021 20:34
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Justify_in_Practice.tex
+(./Justify_in_Practice.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-04-06>
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/apa6/ap
+a6.cls
+Document Class: apa6 2020/01/13 v2.34 APA formatting (6th edition)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ar
+ticle.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/si
+ze10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbo
+x/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count175
+)
+Class apa6 Info: No bibliography package was specified; defaulting to (but not 
+loading) Biblatex on input line 213.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmod
+ern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fo
+ntenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lm
+r.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
+times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
+mathptm.sty
+Package: mathptm 2020/03/25 PSNFSS-v9.3 Times w/ Math (SPQR, WaS) 
+
+Package mathptm Warning: This package is to be regarded as obsolete.
+(mathptm)                See the PSNFSS documentation.
+
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/lmr/m/n --> OT1/ptmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/bx/n --> OT1/ptmcm/m/n on input line 31.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 32.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/lmm/m/it --> OML/ptmcm/m/it on input line 32.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/lmm/b/it --> OML/ptmcm/m/it on input line 32.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 33.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/lmsy/m/n --> OMS/pzccm/m/n on input line 33.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/lmsy/b/n --> OMS/pzccm/m/n on input line 33.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 34.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/lmex/m/n --> OMX/psycm/m/n on input line 34.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/lmex/m/n --> OMX/psycm/m/n on input line 34.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> OT1/ptm/bx/n on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/lmr/bx/n --> OT1/ptm/bx/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 38.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> OT1/ptm/m/it on input line 38.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/bx/it --> OT1/ptm/m/it on input line 38.
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometr
+y/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphic
+s/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex
+/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex
+/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count176
+\Gm@cntv=\count177
+\c@Gm@tempcnt=\count178
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks16
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphic
+s/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphic
+s/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphic
+s/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphic
+s-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphic
+s-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen143
+\Gin@req@width=\dimen144
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktab
+s/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen145
+\lightrulewidth=\dimen146
+\cmidrulewidth=\dimen147
+\belowrulesep=\dimen148
+\belowbottomsep=\dimen149
+\aboverulesep=\dimen150
+\abovetopsep=\dimen151
+\cmidrulesep=\dimen152
+\cmidrulekern=\dimen153
+\defaultaddspace=\dimen154
+\@cmidla=\count179
+\@cmidlb=\count180
+\@aboverulesep=\dimen155
+\@belowrulesep=\dimen156
+\@thisruleclass=\count181
+\@lastruleclass=\count182
+\@thisrulewidth=\dimen157
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threepa
+rttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box45
+)
+\b@level@one@skip=\skip49
+\e@level@one@skip=\skip50
+\b@level@two@skip=\skip51
+\e@level@two@skip=\skip52
+\b@level@three@skip=\skip53
+\e@level@three@skip=\skip54
+\b@level@four@skip=\skip55
+\e@level@four@skip=\skip56
+\b@level@five@skip=\skip57
+\e@level@five@skip=\skip58
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption
+/caption.sty
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption
+/caption3.sty
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen158
+\captionmargin@=\dimen159
+\captionwidth=\dimen160
+\caption@tempdima=\dimen161
+\caption@indent=\dimen162
+\caption@parindent=\dimen163
+\caption@hangindent=\dimen164
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count183
+\c@continuedfloat=\count184
+Package caption Info: threeparttable package is loaded.
+)
+\c@APAenum=\count185
+\@text@par@indent=\skip59
+\gr@box=\box46
+\gr@boxwidth=\skip60
+\gr@boxheight=\skip61
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/b
+m.sty
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+LaTeX Info: Redefining \bm on input line 209.
+)
+\c@appendix=\count186
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/f
+tnright.sty
+Package: ftnright 2014/10/28 v1.1f footnote layout package (FMi)
+\rcol@footinsskip=\skip62
+\ftn@amount=\dimen165
+)
+\auone@box=\box47
+\autwo@box=\box48
+\autot@box=\box49
+\auone@boxwidth=\skip63
+\autwo@boxwidth=\skip64
+\autot@boxwidth=\skip65
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath
+/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip66
+For additional information on amsmath, use the `?' option.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath
+/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath
+/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen166
+))
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath
+/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+LaTeX Info: Redefining \boldsymbol on input line 28.
+\pmbraise@=\dimen167
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath
+/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count187
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count188
+\leftroot@=\count189
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count190
+\DOTSCASE@=\count191
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen168
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count192
+\c@MaxMatrixCols=\count193
+\dotsspace@=\muskip16
+\c@parentequation=\count194
+\dspbrk@lvl=\count195
+\tag@help=\toks18
+\row@=\count196
+\column@=\count197
+\maxfields@=\count198
+\andhelp@=\toks19
+\eqnshift@=\dimen169
+\alignsep@=\dimen170
+\tagshift@=\dimen171
+\tagwidth@=\dimen172
+\totwidth@=\dimen173
+\lineht@=\dimen174
+\@envbody=\toks20
+\multlinegap=\skip67
+\multlinetaggap=\skip68
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex
+/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex
+/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fo
+ntenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 11
+2.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
+t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+))
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/in
+putenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/te
+xtcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
+s/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
+s/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/upquote
+/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/
+xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphic
+s-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperre
+f/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcm
+ds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdftexc
+mds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwa
+rerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvset
+keys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdef
+inekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfes
+cape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor
+/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxm
+acro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook
+/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptio
+ns/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen175
+\Hy@linkcounter=\count199
+\Hy@pagecounter=\count266
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperre
+f/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intca
+lc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexc
+mds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count267
+Package hyperref Info: Option `unicode' set `true' on input line 4421.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperre
+f/puenc.def
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count268
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url
+.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen176
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitse
+t/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigin
+tcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count269
+\Field@Width=\dimen177
+\Fld@charsize=\dimen178
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/atbeg
+shi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count270
+\c@Item=\count271
+\c@Hfootnote=\count272
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperre
+f/hpdftex.def
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/atverye
+nd/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+)
+\Fld@listcount=\count273
+\c@bookmark@seq@number=\count274
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfi
+lecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniqu
+ecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip69
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/was/upg
+reek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/l
+ongtable.sty
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip70
+\LTright=\skip71
+\LTpre=\skip72
+\LTpost=\skip73
+\LTchunksize=\count275
+\LTcapwidth=\dimen179
+\LT@head=\box52
+\LT@firsthead=\box53
+\LT@foot=\box54
+\LT@lastfoot=\box55
+\LT@cols=\count276
+\LT@rows=\count277
+\c@LT@tables=\count278
+\c@LT@chunks=\count279
+\LT@p@ftn=\toks24
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphic
+s/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multiro
+w/multirow.sty
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip74
+\multirow@cntb=\count280
+\multirow@dima=\skip75
+\bigstrutjot=\dimen180
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/t
+abularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/a
+rray.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen181
+\ar@mcellbox=\box56
+\extrarowheight=\dimen182
+\NC@list=\toks25
+\extratabsurround=\skip76
+\backup@length=\skip77
+\ar@cellbox=\box57
+)
+\TX@col@width=\dimen183
+\TX@old@table=\dimen184
+\TX@old@col=\dimen185
+\TX@target=\dimen186
+\TX@delta=\dimen187
+\TX@cols=\count281
+\TX@ftn=\toks26
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threepa
+rttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ
+/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspa
+ces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip78
+)
+\longtablewidth=\skip79
+Failed to patch abstract.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/dblfloa
+tfix/dblfloatfix.sty
+Package: dblfloatfix 2012/12/31 v1.0a (JAW)
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fi
+xltx2e.sty
+Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
+Applying: [2015/01/01] Old fixltx2e package on input line 46.
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+Already applied: [0000/00/00] Old fixltx2e package on input line 53.
+)
+\@dblbotnum=\count282
+\c@dblbotnumber=\count283
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquote
+s/csquotes.sty
+Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
+\csq@reset=\count284
+\csq@gtype=\count285
+\csq@glevel=\count286
+\csq@qlevel=\count287
+\csq@maxlvl=\count288
+\csq@tshold=\count289
+\csq@ltx@everypar=\toks27
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquote
+s/csquotes.def
+File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquote
+s/csquotes.cfg
+File: csquotes.cfg 
+))
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
+/babel.sty
+Package: babel 2020/04/28 3.43 The Babel package
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
+/babel.def
+File: babel.def 2020/04/28 3.43 Babel common definitions
+\babel@savecnt=\count290
+\U@D=\dimen188
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
+/txtbabel.def)
+\bbl@readstream=\read2
+)
+\bbl@dirlevel=\count291
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
+-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: \l@british = using hyphenrules for english
+(babel)             (\language0) on input line 82.
+Package babel Info: \l@UKenglish = using hyphenrules for english
+(babel)             (\language0) on input line 83.
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for english
+(babel)             (\language0) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for english
+(babel)             (\language0) on input line 108.
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel
+-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+))
+\cslhangindent=\skip80
+\csllabelwidth=\skip81
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/c
+alc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count292
+\calc@Bcount=\count293
+\calc@Adimen=\dimen189
+\calc@Bdimen=\dimen190
+\calc@Askip=\skip82
+\calc@Bskip=\skip83
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count294
+\calc@Cskip=\skip84
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backe
+nd/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count295
+\l__pdf_internal_box=\box58
+) (./Justify_in_Practice.aux)
+\openout1 = `Justify_in_Practice.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=501.55397pt
+* \textheight=643.20255pt
+* \oddsidemargin=-18.06749pt
+* \evensidemargin=-18.06749pt
+* \topmargin=-19.8738pt
+* \headheight=13.4457pt
+* \headsep=13.72546pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=121.0pt
+* \marginparsep=11.0pt
+* \columnsep=18.06749pt
+* \skip\footins=10.0pt plus 5.0pt minus 3.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopd
+f-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexco
+nfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/apa6/co
+nfig/APAamerican.txt
+File: APAamerican.txt 2012/02/23 v1.25 apa6 configuration for American English
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption
+/ltcaption.sty
+Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
+\AtBeginShipoutBox=\box59
+Package hyperref Info: Link coloring OFF on input line 165.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperre
+f/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcoun
+t/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/getti
+tlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count296
+)
+LaTeX Info: Redefining \ref on input line 165.
+LaTeX Info: Redefining \pageref on input line 165.
+LaTeX Info: Redefining \nameref on input line 165.
+(./Justify_in_Practice.out) (./Justify_in_Practice.out)
+\@outlinefile=\write3
+\openout3 = `Justify_in_Practice.out'.
+
+LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line
+ 167.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
+ot1ptmcm.fd
+File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line
+ 167.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
+omlptmcm.fd
+File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+pzccm on input line
+ 167.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
+omspzccm.fd
+File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+psycm on input line
+ 167.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
+omxpsycm.fd
+File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
+67.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
+ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 167
+.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
+s/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 167
+.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfont
+s/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[1{c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex
+/updmap/pdftex.map}
+
+
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 194.
+[2]
+<Justify_in_Practice_files/figure-latex/p-plot-1.pdf, id=57, 650.43pt x 361.35p
+t>
+File: Justify_in_Practice_files/figure-latex/p-plot-1.pdf Graphic file (type pd
+f)
+<use Justify_in_Practice_files/figure-latex/p-plot-1.pdf>
+Package pdftex.def Info: Justify_in_Practice_files/figure-latex/p-plot-1.pdf  u
+sed on input line 197.
+(pdftex.def)             Requested size: 241.73712pt x 134.2984pt.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
+06.
+
+(c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/
+ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [3 <./Justify_in_Practice_files/figure-latex/p-plot-1.pdf>]
+<Justify_in_Practice_files/figure-latex/weight-plot-1.pdf, id=74, 650.43pt x 36
+1.35pt>
+File: Justify_in_Practice_files/figure-latex/weight-plot-1.pdf Graphic file (ty
+pe pdf)
+<use Justify_in_Practice_files/figure-latex/weight-plot-1.pdf>
+Package pdftex.def Info: Justify_in_Practice_files/figure-latex/weight-plot-1.p
+df  used on input line 218.
+(pdftex.def)             Requested size: 241.73712pt x 134.2984pt.
+[4 <./Justify_in_Practice_files/figure-latex/weight-plot-1.pdf>]
+<Justify_in_Practice_files/figure-latex/cost-plot-1.pdf, id=90, 650.43pt x 361.
+35pt>
+File: Justify_in_Practice_files/figure-latex/cost-plot-1.pdf Graphic file (type
+ pdf)
+<use Justify_in_Practice_files/figure-latex/cost-plot-1.pdf>
+Package pdftex.def Info: Justify_in_Practice_files/figure-latex/cost-plot-1.pdf
+  used on input line 237.
+(pdftex.def)             Requested size: 241.73712pt x 134.2984pt.
+
+Underfull \vbox (badness 1112) has occurred while \output is active []
+
+[5 <./Justify_in_Practice_files/figure-latex/cost-plot-1.pdf>]
+<Justify_in_Practice_files/figure-latex/error-plot-1.pdf, id=107, 722.7pt x 433
+.62pt>
+File: Justify_in_Practice_files/figure-latex/error-plot-1.pdf Graphic file (typ
+e pdf)
+<use Justify_in_Practice_files/figure-latex/error-plot-1.pdf>
+Package pdftex.def Info: Justify_in_Practice_files/figure-latex/error-plot-1.pd
+f  used on input line 268.
+(pdftex.def)             Requested size: 241.74484pt x 145.0469pt.
+[6 <./Justify_in_Practice_files/figure-latex/error-plot-1.pdf>]
+
+LaTeX Warning: Reference `BFBem' on page 7 undefined on input line 287.
+
+<Justify_in_Practice_files/figure-latex/BFBem-1.pdf, id=120, 505.89pt x 505.89p
+t>
+File: Justify_in_Practice_files/figure-latex/BFBem-1.pdf Graphic file (type pdf
+)
+<use Justify_in_Practice_files/figure-latex/BFBem-1.pdf>
+Package pdftex.def Info: Justify_in_Practice_files/figure-latex/BFBem-1.pdf  us
+ed on input line 291.
+(pdftex.def)             Requested size: 241.74373pt x 241.74373pt.
+[7 <./Justify_in_Practice_files/figure-latex/BFBem-1.pdf>]
+<Justify_in_Practice_files/figure-latex/lindley-1.pdf, id=133, 722.7pt x 433.62
+pt>
+File: Justify_in_Practice_files/figure-latex/lindley-1.pdf Graphic file (type p
+df)
+<use Justify_in_Practice_files/figure-latex/lindley-1.pdf>
+Package pdftex.def Info: Justify_in_Practice_files/figure-latex/lindley-1.pdf  
+used on input line 302.
+(pdftex.def)             Requested size: 241.74484pt x 145.0469pt.
+
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
+[8 <./Justify_in_Practice_files/figure-latex/lindley-1.pdf>] [9pdfTeX warning (
+ext4): destination with the same identifier (name{ref-albers_when_2018}) has be
+en already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.393 \leavevmode
+                 \hypertarget{ref-fisher_design_1935}{}%pdfTeX warning (ext4): 
+destination with the same identifier (name{ref-bakan_test_1966}) has been alrea
+dy used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.393 \leavevmode
+                 \hypertarget{ref-fisher_design_1935}{}%pdfTeX warning (ext4): 
+destination with the same identifier (name{ref-bem2011feeling}) has been alread
+y used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.393 \leavevmode
+                 \hypertarget{ref-fisher_design_1935}{}%pdfTeX warning (ext4): 
+destination with the same identifier (name{ref-cohen_statistical_1988}) has bee
+n already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.393 \leavevmode
+                 \hypertarget{ref-fisher_design_1935}{}%pdfTeX warning (ext4): 
+destination with the same identifier (name{ref-cousins_jeffreyslindley_2017}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.393 \leavevmode
+                 \hypertarget{ref-fisher_design_1935}{}%pdfTeX warning (ext4): 
+destination with the same identifier (name{ref-cowles_origins_1982}) has been a
+lready used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.393 \leavevmode
+                 \hypertarget{ref-fisher_design_1935}{}%pdfTeX warning (ext4): 
+destination with the same identifier (name{ref-cumming_replication_2008}) has b
+een already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.393 \leavevmode
+                 \hypertarget{ref-fisher_design_1935}{}%pdfTeX warning (ext4): 
+destination with the same identifier (name{ref-fiedler2012long}) has been alrea
+dy used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.393 \leavevmode
+                 \hypertarget{ref-fisher_design_1935}{}%] [10pdfTeX warning (ex
+t4): destination with the same identifier (name{ref-fisher_design_1935}) has be
+en already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.474 \leavevmode
+                 \hypertarget{ref-tunc_epistemic_2021}{}%pdfTeX warning (ext4):
+ destination with the same identifier (name{ref-gigerenzer_statistical_2018}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.474 \leavevmode
+                 \hypertarget{ref-tunc_epistemic_2021}{}%pdfTeX warning (ext4):
+ destination with the same identifier (name{ref-jeffreys_theory_1939}) has been
+ already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.474 \leavevmode
+                 \hypertarget{ref-tunc_epistemic_2021}{}%pdfTeX warning (ext4):
+ destination with the same identifier (name{ref-leamer_specification_1978}) has
+ been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.474 \leavevmode
+                 \hypertarget{ref-tunc_epistemic_2021}{}%pdfTeX warning (ext4):
+ destination with the same identifier (name{ref-lindley_statistical_1957}) has 
+been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.474 \leavevmode
+                 \hypertarget{ref-tunc_epistemic_2021}{}%pdfTeX warning (ext4):
+ destination with the same identifier (name{ref-miller_quest_2019}) has been al
+ready used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.474 \leavevmode
+                 \hypertarget{ref-tunc_epistemic_2021}{}%pdfTeX warning (ext4):
+ destination with the same identifier (name{ref-mudge_setting_2012}) has been a
+lready used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.474 \leavevmode
+                 \hypertarget{ref-tunc_epistemic_2021}{}%pdfTeX warning (ext4):
+ destination with the same identifier (name{ref-neyman_problem_1933}) has been 
+already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.474 \leavevmode
+                 \hypertarget{ref-tunc_epistemic_2021}{}%pdfTeX warning (ext4):
+ destination with the same identifier (name{ref-rouder_bayesian_2009}) has been
+ already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.474 \leavevmode
+                 \hypertarget{ref-tunc_epistemic_2021}{}%]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 490.
+[11pdfTeX warning (ext4): destination with the same identifier (name{ref-skippe
+r_sacredness_1967}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.490 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{ref-winer_statistical_1962}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.490 \end{document}
+                    
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 490.
+(./Justify_in_Practice.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 490.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 490.
+Package rerunfilecheck Info: File `Justify_in_Practice.out' has not changed.
+(rerunfilecheck)             Checksum: 9C28675EB59C2B76BFDCD30232C3982E;2287.
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 14379 strings out of 482605
+ 216659 string characters out of 5949435
+ 489780 words of memory out of 5000000
+ 29584 multiletter control sequences out of 15000+600000
+ 590104 words of font info for 115 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 49i,10n,46p,3390b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips
+/base/8r.enc}<c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/Maximilian Maier/AppData/Roamin
+g/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/Maximil
+ian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/typ
+e1/urw/symbol/usyr.pfb><c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf
+-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/Maximilian Maier/AppData/Roami
+ng/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/Maximilian Mai
+er/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Justify_in_Practice.pdf (11 pages, 424630 bytes).
+PDF statistics:
+ 278 PDF objects out of 1000 (max. 8388607)
+ 243 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+
