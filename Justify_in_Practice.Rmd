@@ -142,14 +142,17 @@ As an example, imagine a researcher who plans to perform a study which will be a
 
 We see that increasing the alpha level from the normative 5% level to `r format(res1$alpha, digits = 3, nsmall = 2)` reduced the weighted combined error rate - any larger or smaller alpha level would increase the weighted combined error rate. The reduction in the weighted combined error rate is not huge, but we have reduced the overall probability of making an error. More importantly, we have chosen an alpha level based on a justifiable principle, and clearly articulated the relative costs of a Type 1 and Type 2 error. Perhaps counter-intuitively, decision-making is someti<mes slightly more efficient after *increasing* the alpha level from the default of 0.05 because a small increase in the Type 1 error rate can lead to a larger decrease in the Type 2 error rate. Had the sample size been much smaller, such as n = 10, the solid line in Figure \ref{fig:weight-plot} shows that the weighted combined error rate will always be high, but it is minimized if we increase the alpha level to alpha to `r format(res1_n_10$alpha, digits = 3, nsmall = 2)`. If the sample size had been n = 100, the optimal alpha level to minimize the weighted combined error rate (still assuming H0 and H1 have equal probabilities, and Type 1 and Type 2 errors are equally costly) is `r format(res1_n_100$alpha, digits = 3, nsmall = 2)` (the long-dashed line in Figure \ref{fig:weight-plot}). 
 
-```{r weight-plot, cahce=TRUE, fig.width=9, fig.height=7, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.cap="Weighted combined error rate (y-axis) for an independent *t*-test with n = 10, n = 50, and n = 100 per group and a smallest effect of interest of d = 0.5, for all possible alpha levels (x-axis)."}
+```{r, include = FALSE}
 
-resplot1 <- optimal_alpha(power_function = "pwr::pwr.t.test(d = 0.5, n = 10, sig.level = x, type = 'two.sample', alternative = 'two.sided')$power", error = "minimize", costT1T2 = 1, printplot = FALSE)
-resplot2 <- optimal_alpha(power_function = "pwr::pwr.t.test(d = 0.5, n = 50, sig.level = x, type = 'two.sample', alternative = 'two.sided')$power", error = "minimize", costT1T2 = 1, printplot = FALSE)
-resplot3 <- optimal_alpha(power_function = "pwr::pwr.t.test(d = 0.5, n = 100, sig.level = x, type = 'two.sample', alternative = 'two.sided')$power", error = "minimize", costT1T2 = 1, printplot = FALSE)
+resplot1 <- optimal_alpha(power_function = "pwr::pwr.t.test(d = 0.5, n = 10, sig.level = x, type = 'two.sample', alternative = 'two.sided')$power", error = "minimize", costT1T2 = 1, printplot = TRUE)
+resplot2 <- optimal_alpha(power_function = "pwr::pwr.t.test(d = 0.5, n = 50, sig.level = x, type = 'two.sample', alternative = 'two.sided')$power", error = "minimize", costT1T2 = 1, printplot = TRUE)
+resplot3 <- optimal_alpha(power_function = "pwr::pwr.t.test(d = 0.5, n = 100, sig.level = x, type = 'two.sample', alternative = 'two.sided')$power", error = "minimize", costT1T2 = 1, printplot = TRUE)
 
 plot_data <- rbind(resplot1$plot_data, resplot2$plot_data, resplot3$plot_data)
 plot_data$n <- as.factor(rep(c(10, 50, 100), each = 9999))
+```
+
+```{r weight-plot, cahce=TRUE, fig.width=9, fig.height=7, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.cap="Weighted combined error rate (y-axis) for an independent *t*-test with n = 10, n = 50, and n = 100 per group and a smallest effect of interest of d = 0.5, for all possible alpha levels (x-axis)."}
 
 w_c_alpha_plot <- ggplot(data=plot_data, aes(x=alpha_list, y=w_c_list)) +
   geom_line(size = 1.3, aes(linetype = n)) +
@@ -163,8 +166,8 @@ w_c_alpha_plot <- ggplot(data=plot_data, aes(x=alpha_list, y=w_c_list)) +
   theme(legend.position="bottom", legend.text=element_text(size=20))
 
 w_c_alpha_plot
-
 ```
+
 ```{r, include=FALSE}
 #Cohen would weigh Type 1 four times as much as Type 2 errors
 #We set n to 50 participants and d = 0.5, and costT1T2 to 4.

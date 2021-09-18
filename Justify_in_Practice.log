@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.5.4)  7 SEP 2021 17:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.5.4)  18 SEP 2021 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -954,13 +954,13 @@ me{ref-Jeffreys1939}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.481 
+l.478 
       ] [31] AED endfloat: Processing end Figures and Tables [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 520.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 520.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 523.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 523.
 (./Justify_in_Practice.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 520.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 520.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 523.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 523.
 Package rerunfilecheck Info: File `Justify_in_Practice.out' has not changed.
 (rerunfilecheck)             Checksum: E9C9BE0A57A2BA1CD234271A8D9215EA;2920.
 
@@ -968,8 +968,8 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 14916 strings out of 482605
- 224521 string characters out of 5949435
+ 14917 strings out of 482605
+ 224538 string characters out of 5949435
  491671 words of memory out of 5000000
  30075 multiletter control sequences out of 15000+600000
  605583 words of font info for 89 fonts, out of 8000000 for 9000
@@ -993,10 +993,10 @@ ublic/lm/lmr8.pfb><c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmri12.pfb><c:/Users/Maximilian Maier/AppData/Roaming/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/Maximilian Maier/App
 Data/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Justify_in_Practice.pdf (32 pages, 550375 bytes).
+Output written on Justify_in_Practice.pdf (32 pages, 550284 bytes).
 PDF statistics:
- 418 PDF objects out of 1000 (max. 8388607)
- 358 compressed objects within 4 object streams
- 113 named destinations out of 1000 (max. 500000)
+ 419 PDF objects out of 1000 (max. 8388607)
+ 359 compressed objects within 4 object streams
+ 114 named destinations out of 1000 (max. 500000)
  135 words of extra memory for PDF output out of 10000 (max. 10000000)
 
