@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.5.4)  18 SEP 2021 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.5.4)  18 NOV 2021 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -895,72 +895,66 @@ Package pdftex.def Info: Justify_in_Practice_files/figure-latex/weight-plot-1.p
 df  used on input line 231.
 (pdftex.def)             Requested size: 452.9755pt x 352.31427pt.
 [10] [11 <./Justify_in_Practice_files/figure-latex/weight-plot-1.pdf>] [12] [13
-]
-<Justify_in_Practice_files/figure-latex/cost-plot-1.pdf, id=152, 650.43pt x 361
+] [14]
+<Justify_in_Practice_files/figure-latex/cost-plot-1.pdf, id=157, 650.43pt x 361
 .35pt>
 File: Justify_in_Practice_files/figure-latex/cost-plot-1.pdf Graphic file (type
  pdf)
 <use Justify_in_Practice_files/figure-latex/cost-plot-1.pdf>
 Package pdftex.def Info: Justify_in_Practice_files/figure-latex/cost-plot-1.pdf
-  used on input line 252.
+  used on input line 258.
 (pdftex.def)             Requested size: 452.9755pt x 251.65306pt.
-[14 <./Justify_in_Practice_files/figure-latex/cost-plot-1.pdf>] [15] [16] [17] 
-[18]
-<Justify_in_Practice_files/figure-latex/error-plot-1.pdf, id=192, 722.7pt x 433
+[15] [16 <./Justify_in_Practice_files/figure-latex/cost-plot-1.pdf>] [17] [18] 
+[19] [20]
+<Justify_in_Practice_files/figure-latex/error-plot-1.pdf, id=200, 722.7pt x 433
 .62pt>
 File: Justify_in_Practice_files/figure-latex/error-plot-1.pdf Graphic file (typ
 e pdf)
 <use Justify_in_Practice_files/figure-latex/error-plot-1.pdf>
 Package pdftex.def Info: Justify_in_Practice_files/figure-latex/error-plot-1.pd
-f  used on input line 296.
+f  used on input line 311.
 (pdftex.def)             Requested size: 452.96558pt x 271.77934pt.
-[19 <./Justify_in_Practice_files/figure-latex/error-plot-1.pdf>] [20] [21]
-<Justify_in_Practice_files/figure-latex/Lindley150-1.pdf, id=215, 578.16pt x 43
+[21] [22 <./Justify_in_Practice_files/figure-latex/error-plot-1.pdf>] [23] [24]
+<Justify_in_Practice_files/figure-latex/Lindley150-1.pdf, id=227, 578.16pt x 43
 3.62pt>
 File: Justify_in_Practice_files/figure-latex/Lindley150-1.pdf Graphic file (typ
 e pdf)
 <use Justify_in_Practice_files/figure-latex/Lindley150-1.pdf>
 Package pdftex.def Info: Justify_in_Practice_files/figure-latex/Lindley150-1.pd
-f  used on input line 327.
+f  used on input line 343.
 (pdftex.def)             Requested size: 452.96558pt x 339.72418pt.
-[22]
+[25] [26 <./Justify_in_Practice_files/figure-latex/Lindley150-1.pdf>]
 
-LaTeX Warning: Reference `fig:lindleyplot' on page 23 undefined on input line 3
-33.
+LaTeX Warning: Reference `fig:lindleyplot' on page 27 undefined on input line 3
+51.
 
-[23 <./Justify_in_Practice_files/figure-latex/Lindley150-1.pdf>]
-<Justify_in_Practice_files/figure-latex/lindleyplot-1.pdf, id=231, 722.7pt x 43
+<Justify_in_Practice_files/figure-latex/lindleyplot-1.pdf, id=245, 722.7pt x 43
 3.62pt>
 File: Justify_in_Practice_files/figure-latex/lindleyplot-1.pdf Graphic file (ty
 pe pdf)
 <use Justify_in_Practice_files/figure-latex/lindleyplot-1.pdf>
 Package pdftex.def Info: Justify_in_Practice_files/figure-latex/lindleyplot-1.p
-df  used on input line 335.
+df  used on input line 353.
 (pdftex.def)             Requested size: 452.96558pt x 271.77934pt.
 
-Overfull \hbox (28.90523pt too wide) in paragraph at lines 335--337
+Overfull \hbox (28.90523pt too wide) in paragraph at lines 353--355
 [][] 
  []
 
-[24 <./Justify_in_Practice_files/figure-latex/lindleyplot-1.pdf>] [25] [26] [27
-] [28pdfTeX warning (ext4): destination with the same identifier (name{ref-cowl
-es_origins_1982}) has been already used, duplicate ignored
+[27 <./Justify_in_Practice_files/figure-latex/lindleyplot-1.pdf>] [28] [29] [30
+] [31] [32pdfTeX warning (ext4): destination with the same identifier (name{ref
+-cowles_origins_1982}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.418 
-      ] [29] [30pdfTeX warning (ext4): destination with the same identifier (na
-me{ref-Jeffreys1939}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.478 
-      ] [31] AED endfloat: Processing end Figures and Tables [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 523.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 523.
+l.436 
+      ] [33] [34] [35] [36] AED endfloat: Processing end Figures and Tables [37
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 562.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 562.
 (./Justify_in_Practice.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 523.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 523.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 562.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 562.
 Package rerunfilecheck Info: File `Justify_in_Practice.out' has not changed.
 (rerunfilecheck)             Checksum: E9C9BE0A57A2BA1CD234271A8D9215EA;2920.
 
@@ -968,13 +962,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 14917 strings out of 482605
- 224538 string characters out of 5949435
- 491671 words of memory out of 5000000
+ 14931 strings out of 482605
+ 224766 string characters out of 5949435
+ 493671 words of memory out of 5000000
  30075 multiletter control sequences out of 15000+600000
  605583 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,11n,51p,2258b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,51p,2258b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips
 /lm/lm-mathsy.enc}{c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist
 /fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/Maximilian Maier/AppData/Roaming/TinyTe
@@ -993,10 +987,10 @@ ublic/lm/lmr8.pfb><c:/Users/Maximilian Maier/AppData/Roaming/TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmri12.pfb><c:/Users/Maximilian Maier/AppData/Roaming/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/Maximilian Maier/App
 Data/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Justify_in_Practice.pdf (32 pages, 550284 bytes).
+Output written on Justify_in_Practice.pdf (37 pages, 563593 bytes).
 PDF statistics:
- 419 PDF objects out of 1000 (max. 8388607)
- 359 compressed objects within 4 object streams
- 114 named destinations out of 1000 (max. 500000)
+ 465 PDF objects out of 1000 (max. 8388607)
+ 400 compressed objects within 4 object streams
+ 128 named destinations out of 1000 (max. 500000)
  135 words of extra memory for PDF output out of 10000 (max. 10000000)
 
